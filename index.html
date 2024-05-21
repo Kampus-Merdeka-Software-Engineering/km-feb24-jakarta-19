@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 19 Dashboard</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- icons css  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- table  -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+
+</head>
+
+<body>
+    <!-- ====== header ====== -->
+    <div class="all-section">
+        <!-- ====== Sidebar navigation ====== -->
+        <aside>
+            <nav class="sidebar">
+                <div class="image-text">
+                    <span class="logo">
+                        <img src="asset/logo revou_1.png" alt="logo">
+                    </span>
+                    <div class="text">
+                        <span class="team">TEAM 19</span>
+                        <span class="kota"> Section Jakarta</span>
+                    </div>
+                </div>
+                <!-- ====== Menu  navigation ====== -->
+                <div class="menu-bar">
+                    <div class="menu">
+                        <ul class="menu-links">
+                            <li class="nav-link">
+                                <a href="#dashboard" class="active">
+                                    <i class='bx bxs-dashboard icons'></i>
+                                    <span class="text nav-text">Dashboard</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- <ul class="menu-links">
+                            <li class="nav-link">
+                                <a href="table.html">
+                                    <i class='bx bxs-bar-chart-alt-2 icons'></i>
+                                    <span class="text nav-text">Table</span>
+                                </a>
+                            </li>
+                        </ul> -->
+                        <ul class="menu-links">
+                            <li class="nav-link">
+                                <a href="#">
+                                    <i class='bx bx-error-circle icons'></i>
+                                    <span class="text nav-text">About</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- ====== navigation bawah ====== -->
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="#">
+                                <i class='bx bx-cog icons'></i>
+                                <span class="text nav-text">Setting</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                <i class='bx bx-log-out icons'></i>
+                                <span class="text nav-text">Logout</span>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        <div class="main-section">
+            <header class="head-content">
+                <nav>
+                    <i class='bx bx-menu'></i>
+                    <a href="#" class="link-nav">DASHBOARD</a>
+                    <form action="#">
+                        <div class="form-input">
+                            <button type="submit" class="search-btn"><i class='bx bx-search-alt'></i></button>
+                            <input type="search" placeholder="Type to Search">
+                        </div>
+                    </form>
+                    <a href="#" class="notification">
+                        <i class='bx bxs-bell'></i>
+                    </a>
+                    <a href="#">
+                        <img src="asset/user photos.jpg" alt="user picture">
+                    </a>
+                </nav>
+            </header>
+            <!-- ========= Main container ======== -->
+            <section>
+                <div class="main-container">
+                    <div class="text-chart">
+                        <p id="text1">Analytics Overview</p>
+                        <p id="text2">Here's what's happening with your Maven Store today</p>
+                    </div>
+                    <!-- ==== filter ==== -->
+                    <div class="filter">
+                        <div class="filter-1" >
+                            <select name="" id="">
+                                <option value="astori">Astoria</option>
+                                <option value="lower">lower Mahmantt</option>
+                                <option value="hell">Hell kitchen</option>
+                            </select>
+                            <!-- <div class="fitler-name">Store</div>
+                            <i class='bx bxs-map-pin'></i> -->
+                        </div>
+                        <div class="filter-2">
+                            <label for="">start</label>
+                            <input type="date">
+                            
+                            <!-- <div class="fitler-name">Date</div>
+                            <i class='bx bx-calendar'></i> -->
+                        </div>
+                        <div class="filter-3">
+                            <label for="">end</label>
+                            <input type="date">
+                            <!-- <div class="fitler-name">Time</div>
+                            <i class='bx bx-time-five'></i> -->
+                        </div>
+                    </div>
+                    <!-- ======== CHART ===== -->
+                    <div class="card-container">
+                        <div class="rectangle-1">
+                            <div class="card-name">Total Sold</div class="card-name">
+                            <div class="numbers">167283</div>
+                            <i class='bx bxs-shopping-bag-alt'></i>
+                        </div>
+                        <div class="rectangle-2">
+                            <div class="card-name">Transaction</div class="card-name">
+                            <div class="numbers">167283</div>
+                            <i class='bx bxs-shopping-bag-alt'></i>
+                        </div>
+                        <div class="rectangle-3">
+                            <div class="card-name">Revenue</div class="card-name">
+                            <div class="numbers">167283</div>
+                            <i class='bx bxs-shopping-bag-alt'></i>
+                        </div>
+                        <div class="rectangle-4">
+                            <div class="card-name">Bar Chart</div>
+                            <canvas id="bar-chart"></canvas>
+                            
+                        </div>
+                        <div class="rectangle-5">
+                            <div class="card-name">Pie Chart</div class="card-name">
+                            <canvas id="pie-chart"></canvas>
+
+                        </div>
+                        <div class="rectangle-6">
+                            <div class="card-name">Chart</div class="card-name">
+                            <canvas id="bar-chart-2"></canvas>
+                            
+
+                        </div>
+                        <div class="rectangle-7">
+                            <div class="card-name">Line chart</div class="card-name">
+                        </div>
+                    </div>
+                    <!-- ======= TABLE ====== -->
+                    <div class="table-container">
+                        <div class="text-table">Table Coffee Shop Sales</div>
+                        <table id="table">
+                            <thead>
+                                <tr>
+                                    <th>numbers</th>
+                                    <th>transaction_id</th>
+                                    <th>transaction_date</th>
+                                    <th>transaction_time</th>
+                                    <th>transaction_qty</th>
+                                    <th>store_id</th>
+                                    <th>store_location</th>
+                                    <th>product_id</th>
+                                  </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>col-1</td>
+                                    <td>col-2</td>
+                                    <td>col-3</td>
+                                    <td>col-4</td>
+                                    <td>col-5</td>
+                                    <td>col-6</td>
+                                    <td>col-7</td>
+                                    <td>col-8</td>
+                                  </tr>
+                                <!-- <tr>
+                                    <td>col-1</td>
+                                    <td>col-2</td>
+                                    <td>col-3</td>
+                                    <td>col-4</td>
+                                    <td>col-5</td>
+                                    <td>col-6</td>
+                                    <td>col-7</td>
+                                    <td>col-8</td>
+                                  </tr>
+                                  <tr>
+                                      <td>col-1</td>
+                                      <td>col-2</td>
+                                      <td>col-3</td>
+                                      <td>col-4</td>
+                                      <td>col-5</td>
+                                      <td>col-6</td>
+                                      <td>col-7</td>
+                                      <td>col-8</td>
+                                  </tr>
+                                  <tr>
+                                      <td>col-1</td>
+                                    <td>col-2</td>
+                                    <td>col-3</td>
+                                    <td>col-4</td>
+                                    <td>col-5</td>
+                                    <td>col-6</td>
+                                    <td>col-7</td>
+                                    <td>col-8</td>
+                                  </tr>
+                                  <tr>
+                                      <td>col-1</td>
+                                    <td>col-2</td>
+                                    <td>col-3</td>
+                                    <td>col-4</td>
+                                    <td>col-5</td>
+                                    <td>col-6</td>
+                                    <td>col-7</td>
+                                    <td>col-8</td>
+                                  </tr>
+                                  <tr>
+                                      <td>col-1</td>
+                                    <td>col-2</td>
+                                    <td>col-3</td>
+                                    <td>col-4</td>
+                                    <td>col-5</td>
+                                    <td>col-6</td>
+                                    <td>col-7</td>
+                                    <td>col-8</td>
+                                  </tr>
+                                  <tr>
+                                      <td>col-1</td>
+                                    <td>col-2</td>
+                                    <td>col-3</td>
+                                    <td>col-4</td>
+                                    <td>col-5</td>
+                                    <td>col-6</td>
+                                    <td>col-7</td>
+                                    <td>col-8</td>
+                                  </tr> -->
+                            </tbody>
+                            
+                          </table>
+                    </div>
+
+                    <!-- footer -->
+                    <footer class="footer">
+                        <p>&copy 2024 Team 19 Jakarta</p>
+                    </footer>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"
+        integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3ZSTk7kajkaj4D292NLuduDCO1c/NT8Id+jE58KYLKT7hXnbtryGmMg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- j -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- table -->
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+
+    <!-- custom Javascript -->
+    <script src="js/script.js"> </script>
+
+    <!-- icon  -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+</body>
+
+</html>
