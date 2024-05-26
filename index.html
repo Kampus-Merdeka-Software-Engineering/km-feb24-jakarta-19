@@ -106,65 +106,68 @@
                     </div>
                     <!-- ==== filter ==== -->
                     <div class="filter">
-                        <div class="filter-1" >
-                            <select name="" id="">
-                                <option value="astori">Astoria</option>
-                                <option value="lower">lower Mahmantt</option>
-                                <option value="hell">Hell kitchen</option>
+                        <div class="filter-1">
+                            
+                            <select name="" id="store">
+                                <!-- <label for="store" id="text-name">Store</label> -->
+                                <option value="astoria">Astoria</option>
+                                <option value="lower">Lower Manhattan</option>
+                                <option value="hell">Hell's Kitchen</option>
                             </select>
-                            <!-- <div class="fitler-name">Store</div>
-                            <i class='bx bxs-map-pin'></i> -->
                         </div>
                         <div class="filter-2">
-                            <label for="">start</label>
-                            <input type="date">
-                            
-                            <!-- <div class="fitler-name">Date</div>
-                            <i class='bx bx-calendar'></i> -->
-                        </div>
-                        <div class="filter-3">
-                            <label for="">end</label>
-                            <input type="date">
-                            <!-- <div class="fitler-name">Time</div>
-                            <i class='bx bx-time-five'></i> -->
+                            <label for="">Start</label>
+                            <input type="date" id="dateStart">
+                            <label for="">End</label>
+                            <input type="date" id="dateEnd">
                         </div>
                     </div>
                     <!-- ======== CHART ===== -->
                     <div class="card-container">
                         <div class="rectangle-1">
-                            <div class="card-name">Total Sold</div class="card-name">
-                            <div class="numbers">167283</div>
-                            <i class='bx bxs-shopping-bag-alt'></i>
+                            <div class="card-name">Top Performance</div>
+                            <!-- <div class="numbers">167283</div>
+                            <i class='bx bxs-shopping-bag-alt'></i> -->
                         </div>
+
                         <div class="rectangle-2">
-                            <div class="card-name">Transaction</div class="card-name">
+                            <div class="card-name">Product Sold</div>
                             <div class="numbers">167283</div>
                             <i class='bx bxs-shopping-bag-alt'></i>
                         </div>
+
                         <div class="rectangle-3">
-                            <div class="card-name">Revenue</div class="card-name">
+                            <div class="card-name">Transactions</div>
                             <div class="numbers">167283</div>
                             <i class='bx bxs-shopping-bag-alt'></i>
                         </div>
+
                         <div class="rectangle-4">
-                            <div class="card-name">Bar Chart</div>
-                            <canvas id="bar-chart"></canvas>
-                            
+                            <div class="card-name">Revenue</div>
+                            <div class="numbers">167283</div>
+                            <i class='bx bxs-shopping-bag-alt'></i>
                         </div>
+
                         <div class="rectangle-5">
-                            <div class="card-name">Pie Chart</div class="card-name">
-                            <canvas id="pie-chart"></canvas>
-
+                            <div class="card-name">Product Sold By Store Location</div>
+                            <canvas id="bar-chart"></canvas>
                         </div>
+
                         <div class="rectangle-6">
-                            <div class="card-name">Chart</div class="card-name">
-                            <canvas id="bar-chart-2"></canvas>
-                            
+                            <div class="card-name">Revenue By Store Location</div>
+                            <canvas id="pie-chart"></canvas>
+                        </div>
 
-                        </div>
                         <div class="rectangle-7">
-                            <div class="card-name">Line chart</div class="card-name">
+                            <div class="card-name">Top 5 Product Category Smallest Sold</div>
+                            <canvas id="bar-chart-2"></canvas>
                         </div>
+
+                        <div class="rectangle-8">
+                            <div class="card-name">Quantity Sold By Time</div>
+                            <canvas id="line-chart"></canvas>
+                        </div>
+
                     </div>
                     <!-- ======= TABLE ====== -->
                     <div class="table-container">
@@ -180,7 +183,7 @@
                                     <th>store_id</th>
                                     <th>store_location</th>
                                     <th>product_id</th>
-                                  </tr>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr>
@@ -192,8 +195,8 @@
                                     <td>col-6</td>
                                     <td>col-7</td>
                                     <td>col-8</td>
-                                  </tr>
-                                <!-- <tr>
+                                </tr>
+                                <tr>
                                     <td>col-1</td>
                                     <td>col-2</td>
                                     <td>col-3</td>
@@ -202,60 +205,10 @@
                                     <td>col-6</td>
                                     <td>col-7</td>
                                     <td>col-8</td>
-                                  </tr>
-                                  <tr>
-                                      <td>col-1</td>
-                                      <td>col-2</td>
-                                      <td>col-3</td>
-                                      <td>col-4</td>
-                                      <td>col-5</td>
-                                      <td>col-6</td>
-                                      <td>col-7</td>
-                                      <td>col-8</td>
-                                  </tr>
-                                  <tr>
-                                      <td>col-1</td>
-                                    <td>col-2</td>
-                                    <td>col-3</td>
-                                    <td>col-4</td>
-                                    <td>col-5</td>
-                                    <td>col-6</td>
-                                    <td>col-7</td>
-                                    <td>col-8</td>
-                                  </tr>
-                                  <tr>
-                                      <td>col-1</td>
-                                    <td>col-2</td>
-                                    <td>col-3</td>
-                                    <td>col-4</td>
-                                    <td>col-5</td>
-                                    <td>col-6</td>
-                                    <td>col-7</td>
-                                    <td>col-8</td>
-                                  </tr>
-                                  <tr>
-                                      <td>col-1</td>
-                                    <td>col-2</td>
-                                    <td>col-3</td>
-                                    <td>col-4</td>
-                                    <td>col-5</td>
-                                    <td>col-6</td>
-                                    <td>col-7</td>
-                                    <td>col-8</td>
-                                  </tr>
-                                  <tr>
-                                      <td>col-1</td>
-                                    <td>col-2</td>
-                                    <td>col-3</td>
-                                    <td>col-4</td>
-                                    <td>col-5</td>
-                                    <td>col-6</td>
-                                    <td>col-7</td>
-                                    <td>col-8</td>
-                                  </tr> -->
+                                </tr>
                             </tbody>
-                            
-                          </table>
+
+                        </table>
                     </div>
 
                     <!-- footer -->
@@ -266,14 +219,18 @@
             </section>
         </div>
     </div>
-    
+
     <!-- chart js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"
         integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3ZSTk7kajkaj4D292NLuduDCO1c/NT8Id+jE58KYLKT7hXnbtryGmMg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- j -->
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <!-- table -->
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- data table -->
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
 
     <!-- custom Javascript -->

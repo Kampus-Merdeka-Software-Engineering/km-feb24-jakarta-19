@@ -12,13 +12,16 @@ function createChart(element, type, label, datasets, options) {
     });
     return chart;
 
-}
+};
+
+// =================== PIE CHART ================
+
 let pieChart = createChart(
     'pie-chart',
     'doughnut',
-    ['astoria', 'hell kitchen', 'lower mahmantt'],
+    ["Astoria", "Hell's Kitchen", "Lower Manhattan"],
     [{
-        label: 'My First Dataset',
+        label: 'trafic source',
         data: [300, 50, 100],
         backgroundColor: [
             'rgb(255, 99, 132)',
@@ -37,10 +40,12 @@ let pieChart = createChart(
     }
 );
 
+// ============= BAR CHART ==============
+
 let barChart = createChart(
     'bar-chart',
     'bar',
-    ['Juni', 'Mei', 'April', 'Maret', 'Februari', 'Januari'],
+    ['January', 'February', 'March', 'April', 'May', 'June'],
     [{
 
         label: 'My First Dataset',
@@ -49,7 +54,9 @@ let barChart = createChart(
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
             'rgb(255, 205, 86)',
-            'rgb(25, 355, 76)'
+            'rgb(25, 355, 76)',
+            'rgb(255, 205, 86)',
+            'rgb(255, 99, 132)'
         ],
     },
     {
@@ -78,6 +85,8 @@ let barChart = createChart(
     }
 );
 
+// ==================== BAR CHART HORIZONTAL ================
+
 let barChart2 = createChart(
     'bar-chart-2',
     'bar',
@@ -97,6 +106,26 @@ let barChart2 = createChart(
     {
         indexAxis: 'y',
     }
+);
+
+// ============ LINE CHART ===============
+
+let lineChart = createChart(
+    'line-chart',
+    'line',
+    ['Packaged chocolate', 'branded', 'loose tea', 'coffee beans','flavours'],
+    [{
+        label: 'My First Dataset',
+        data: [20, 230, 100, 70, 40],
+        fill: false,
+        backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)',
+            'rgb(35, 105, 36)',
+            'rgb(5, 205, 26)'
+        ],
+    }],
 );
 
 let table = new DataTable('#table', {
