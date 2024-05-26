@@ -107,7 +107,7 @@
                     <!-- ==== filter ==== -->
                     <div class="filter">
                         <div class="filter-1">
-                            
+
                             <select name="" id="store">
                                 <!-- <label for="store" id="text-name">Store</label> -->
                                 <option value="astoria">Astoria</option>
@@ -126,25 +126,35 @@
                     <div class="card-container">
                         <div class="rectangle-1">
                             <div class="card-name">Top Performance</div>
-                            <!-- <div class="numbers">167283</div>
-                            <i class='bx bxs-shopping-bag-alt'></i> -->
+                            <div class="performance">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Store</th>
+                                            <th>ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="top">
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
 
                         <div class="rectangle-2">
                             <div class="card-name">Product Sold</div>
-                            <div class="numbers">167283</div>
-                            <i class='bx bxs-shopping-bag-alt'></i>
+                            <div class="numbers" id="sold"></div>
+                            <!-- <i class='bx bxs-shopping-bag-alt'></i> -->
                         </div>
 
                         <div class="rectangle-3">
                             <div class="card-name">Transactions</div>
-                            <div class="numbers">167283</div>
-                            <i class='bx bxs-shopping-bag-alt'></i>
+                            <div class="numbers" id="trans"></div>
+                            <!-- <i class='bx bxs-shopping-bag-alt'></i> -->
                         </div>
 
                         <div class="rectangle-4">
                             <div class="card-name">Revenue</div>
-                            <div class="numbers">167283</div>
+                            <div class="numbers" id="rev"></div>
                             <i class='bx bxs-shopping-bag-alt'></i>
                         </div>
 
@@ -171,7 +181,7 @@
                     </div>
                     <!-- ======= TABLE ====== -->
                     <div class="table-container">
-                        <div class="text-table">Table Coffee Shop Sales</div>
+                        <div class="text-table">Table Dataset Coffee Shop Sales</div>
                         <table id="table">
                             <thead>
                                 <tr>
@@ -185,8 +195,8 @@
                                     <th>product_id</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
+                            <tbody id="colom">
+                                <!-- <tr>
                                     <td>col-1</td>
                                     <td>col-2</td>
                                     <td>col-3</td>
@@ -206,6 +216,16 @@
                                     <td>col-7</td>
                                     <td>col-8</td>
                                 </tr>
+                                <tr>
+                                    <td>col-1</td>
+                                    <td>col-2</td>
+                                    <td>col-3</td>
+                                    <td>col-4</td>
+                                    <td>col-5</td>
+                                    <td>col-6</td>
+                                    <td>col-7</td>
+                                    <td>col-8</td>
+                                </tr> -->
                             </tbody>
 
                         </table>
@@ -234,7 +254,7 @@
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
 
     <!-- custom Javascript -->
-    <script src="js/script.js"> </script>
+    <script src="js/script.js" type="module"> </script>
 
     <!-- icon  -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
