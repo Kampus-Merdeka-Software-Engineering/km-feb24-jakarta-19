@@ -431,7 +431,15 @@ a.active {
 
 .rectangle-1 .performance{
  height: 70px;
- overflow: auto;
+ /* overflow: auto; */
+}
+
+.rectangle-1 table #tableHead{
+  justify-content: space-between;
+  align-items: center;
+  overflow: auto;
+
+
 }
 
 .rectangle-2 {
@@ -509,12 +517,15 @@ a.active {
   /* box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25); */
 }
 
-.rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 .card-name{
+.rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4, .rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 .card-name{
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 20px;
-
+  margin: 10px;
 }
+/* .rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4 .card-name{
+  font-weight: 400;
+} */
 
 /* ========== CHART ============= */
 
@@ -554,6 +565,7 @@ a.active {
   border-radius: 10px;
   flex-wrap: nowrap;
   font-weight: 450;
+  overflow: auto;
 }
 
 .table-container .text-table {
@@ -567,6 +579,7 @@ a.active {
   position: relative;
   width: 100%;
   /* background: #eda7a7; */
+  /* overflow: auto; */
 }
 
 #table thead {
