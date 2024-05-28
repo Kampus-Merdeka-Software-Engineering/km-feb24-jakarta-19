@@ -46,14 +46,27 @@ body {
 
 /* =========== sidebar ========== */
 aside {
-  position: sticky;
-  top: 0;
-  /* left: 0; */
-  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  /* top: 0; */
+  left: 0;
+  height: 100%;
+  z-index: 10000;
+  transition: all 0.3s ease;
   width: 250px;
   padding: 3px 10px;
   background-color: var(--sidebar-color);
 }
+
+aside.hide {
+  /* position: absolute; */
+  height: 100%;
+  left: -250px;
+  transition: all 0.3s ease;
+}
+
+
 
 .all-section {
   display: flex;
@@ -120,6 +133,12 @@ aside {
 
 
 /* ==== navigation menu ==== */
+
+/* .menu-bar {
+  display: flex;
+  justify-content: space-between;
+} */
+
 .sidebar li a {
   text-decoration: none;
   height: 100%;
@@ -154,7 +173,7 @@ a.active {
 
 /* bottom-content */
 .sidebar .menu-bar {
-  height: calc(100% - 5px);
+  /* height: calc(100% - 5px); */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -163,13 +182,18 @@ a.active {
 }
 
 .sidebar .menu-bar .bottom-content {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 90%;
 }
 
 
 /* ============= header content =============== */
+
+.menu-btn {
+  border: none;
+  background-color: white;
+}
 
 .head-content {
   position: sticky;
@@ -431,15 +455,7 @@ a.active {
 
 .rectangle-1 .performance{
  height: 70px;
- /* overflow: auto; */
-}
-
-.rectangle-1 table #tableHead{
-  justify-content: space-between;
-  align-items: center;
-  overflow: auto;
-
-
+ overflow: auto;
 }
 
 .rectangle-2 {
@@ -517,17 +533,25 @@ a.active {
   /* box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25); */
 }
 
-.rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4, .rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 .card-name{
+.rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 .card-name{
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 20px;
-  margin: 10px;
+
 }
-/* .rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4 .card-name{
-  font-weight: 400;
-} */
+
+[class*='rectangle-'] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
 /* ========== CHART ============= */
+
+canvas {
+  max-height: 85% !important;
+  /* max-width: auto !important; */
+}
 
 #pie-chart {
   height: 100%;
@@ -565,7 +589,6 @@ a.active {
   border-radius: 10px;
   flex-wrap: nowrap;
   font-weight: 450;
-  overflow: auto;
 }
 
 .table-container .text-table {
@@ -579,7 +602,6 @@ a.active {
   position: relative;
   width: 100%;
   /* background: #eda7a7; */
-  /* overflow: auto; */
 }
 
 #table thead {

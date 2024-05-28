@@ -20,8 +20,30 @@
 <body>
     <!-- ====== header ====== -->
     <div class="all-section">
-
-        <!-- ====== Sidebar navigation ====== -->
+        <div class="main-section">
+            <header class="head-content">
+                <nav>
+                    <button class="menu-btn">
+                        <i class='bx bx-menu'></i>
+                    </button>
+                    <a href="#" class="link-nav">DASHBOARD</a>
+                    <form action="#">
+                        <div class="form-input">
+                            <button type="submit" class="search-btn"><i class='bx bx-search-alt'></i></button>
+                            <input type="search" placeholder="Type to Search">
+                        </div>
+                    </form>
+                    <a href="#" class="notification">
+                        <i class='bx bxs-bell'></i>
+                    </a>
+                    <a href="#">
+                        <img src="asset/user photos.jpg" alt="user picture">
+                    </a>
+                </nav>
+            </header>
+            <!-- ========= Main container ======== -->
+            <section>
+                <!-- ====== Sidebar navigation ====== -->
         <aside>
             <nav class="sidebar">
                 <div class="image-text">
@@ -43,7 +65,7 @@
                                     <span class="text nav-text">Dashboard</span>
                                 </a>
                             </li>
-                        </ul>
+                        <!-- </ul> -->
                         <!-- <ul class="menu-links">
                             <li class="nav-link">
                                 <a href="table.html">
@@ -52,7 +74,7 @@
                                 </a>
                             </li>
                         </ul> -->
-                        <ul class="menu-links">
+                        <!-- <ul class="menu-links"> -->
                             <li class="nav-link">
                                 <a href="#">
                                     <i class='bx bx-error-circle icons'></i>
@@ -63,44 +85,24 @@
                     </div>
                     <!-- ====== navigation bawah ====== -->
                     <div class="bottom-content">
-                        <li class="">
-                            <a href="#">
-                                <i class='bx bx-cog icons'></i>
-                                <span class="text nav-text">Setting</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#">
-                                <i class='bx bx-log-out icons'></i>
-                                <span class="text nav-text">Logout</span>
-                            </a>
-                        </li>
+                        <ul class="menu-links">
+                            <li class="">
+                                <a href="#">
+                                    <i class='bx bx-cog icons'></i>
+                                    <span class="text nav-text">Settings</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#">
+                                    <i class='bx bx-log-out icons'></i>
+                                    <span class="text nav-text">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
         </aside>
-        
-        <div class="main-section">
-            <header class="head-content">
-                <nav>
-                    <i class='bx bx-menu'></i>
-                    <a href="#" class="link-nav">DASHBOARD</a>
-                    <form action="#">
-                        <div class="form-input">
-                            <button type="submit" class="search-btn"><i class='bx bx-search-alt'></i></button>
-                            <input type="search" placeholder="Type to Search">
-                        </div>
-                    </form>
-                    <a href="#" class="notification">
-                        <i class='bx bxs-bell'></i>
-                    </a>
-                    <a href="#">
-                        <img src="asset/user photos.jpg" alt="user picture">
-                    </a>
-                </nav>
-            </header>
-            <!-- ========= Main container ======== -->
-            <section>
                 <div class="main-container">
                     <div class="text-chart">
                         <p id="text1">Analytics Overview</p>
@@ -130,7 +132,7 @@
                             <div class="card-name">Top Performance</div>
                             <div class="performance">
                                 <table>
-                                    <thead id="tableHead">
+                                    <thead>
                                         <tr>
                                             <th>Store</th>
                                             <th>ID</th>
@@ -195,10 +197,6 @@
                                     <th>store_id</th>
                                     <th>store_location</th>
                                     <th>product_id</th>
-                                    <th>unit_price</th>
-                                    <th>product_category</th>
-                                    <th>product_type</th>
-                                    <th>product_detail</th>
                                 </tr>
                             </thead>
                             <tbody id="colom">
