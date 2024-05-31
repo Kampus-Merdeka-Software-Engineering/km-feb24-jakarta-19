@@ -28,7 +28,7 @@
 body {
   height: 100vh;
   /* position: sticky; */
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap; */
   background: var(--primary-color-light);
   /* max-width: 100%; */
   /* overflow-x: hidden; */
@@ -214,7 +214,8 @@ aside {
 /* ============= Section Main kanan =============== */
 
 .main-section {
-  width: 100%;
+  max-width: 100%;
+  /* position: relative; */
   /* border: 2px solid #19e3dc; */
   overflow: hidden;
 }
@@ -227,25 +228,33 @@ haeder kelaur dari layar, namun jika di berikan posisi stiky header ikut ke
 scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelaur dari layar */
 
 .head-content {
-  position: sticky;
+  position: fixed;
   top: 0;
+  /* right: 0; */
+  /* left: 0; */
   width: 100%;
-  z-index: 2;
-  background-color: var(--primary-color-light);
+  /* z-index: 2; */
+  /* background-color: var(--primary-color-light); */
   color: #dcdbdb;
   box-shadow: 2px 1px 5px 1px;
-  /* border: 3px solid #c51547; */
+  border: 3px solid #b7e66c;
+  /* box-sizing: border-box; */
 }
 
 .head-content nav {
+  /* position: fixed; */
   height: 56px;
+  width: 100%;
+  /* left: 0; */
   padding: 0 24px;
   display: flex;
   align-items: center;
-  grid-gap: 20px;
-  justify-content: space-around;
+  grid-gap: 10px;
+  z-index: 2;
+  background-color: var(--primary-color-light);
+  justify-content: space-evenly;
+  /* border: 3px solid #c51547; */
 }
-
 
 /* picture profile */
 .head-content nav a img {
@@ -336,6 +345,7 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 .head-content nav .notification {
   font-size: 20px;
   position: relative;
+  z-index: 10;
   color: var(--icon-color);
   padding-top: 2px;
 }
@@ -365,14 +375,19 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 .main-container {
   width: 100%;
+  /* padding-top: 20px; */
   cursor: pointer;
   padding: 10px;
   /* border: 3px solid purple; */
+  margin-top: 50px;
 }
 
 /* ============ chart container ========= */
 
 /* === text di dalam dashboard === */
+.text-chart{
+  padding-top: 0px;
+}
 .text-chart #text1 {
   font-size: 20px;
   font-weight: 700;
@@ -509,13 +524,13 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   width: 70px;
   height: 70px;
   border-radius: 12px;
-  background: #dcb5b5;
+  background: #e1e0e0;
+  color: #8a8ac9;
   font-size: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
   /* background: lightblue; */
-  color: rgb(70, 70, 188);
 }
 
 .rectangle-3 {
@@ -537,6 +552,7 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   height: 70px;
   border-radius: 10px;
   background: #e1e0e0;
+  color: #8a8ac9;
   font-size: 32px;
   display: flex;
   justify-content: center;
@@ -562,6 +578,7 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   height: 70px;
   border-radius: 10px;
   background: #e1e0e0;
+  color: #8a8ac9;
   font-size: 32px;
   display: flex;
   justify-content: center;
