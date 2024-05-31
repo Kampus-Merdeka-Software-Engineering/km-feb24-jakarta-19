@@ -1,32 +1,37 @@
 // TOGGLE SIDEBAR
-const menuBtn = document.getElementsByClassName('menu-btn')[0];
-const mainSect = document.getElementsByClassName('main-section')[0];
-const aside = document.getElementsByTagName('aside')[0];
+const menuBtn = document.getElementById('menu-label');
+const sidebar = document.getElementsByClassName('sidebar')[0];
 
-menuBtn.addEventListener('click', function(e) {
-    aside.classList.toggle('hide');
-})
+menuBtn.addEventListener('click', function(){
+    sidebar.classList.toggle('hide');
 
-document.addEventListener('click', (e) => {
-    if (!aside.contains(e.target) && !menuBtn.contains(e.target)) {
-        aside.classList.add('hide');
-    }
 });
+// const mainSect = document.getElementsByClassName('main-section')[0];
+// const aside = document.getElementsByTagName('aside')[0];
+
+// menuBtn.addEventListener('click', function (e) {
+//     aside.classList.toggle('hide');
+// })
+
+// document.addEventListener('click', (e) => {
+//     if (!aside.contains(e.target) && !menuBtn.contains(e.target)) {
+//         aside.classList.add('hide');
+//     }
+// });
 // TOGGLE SIDEBAR
 
-
 import datasets from "./../asset/dataset coffee shop selas.json" assert {
-    type : "json"
+    type: "json"
 }
 let topPerformance = []
 let htmlTopPerformance = ""
-let ProductSold = 0
+let productSold = 0
 let revenue = 0
 let revenueByStore = []
 
 for (let index = 0; index < datasets.length; index++) {
     const dataset = datasets[index];
-    if (!topPerformance.includes(dataset.store_id) ) {
+    if (!topPerformance.includes(dataset.store_id)) {
         topPerformance.push(dataset.store_id)
         htmlTopPerformance += `
         <tr>
@@ -35,21 +40,21 @@ for (let index = 0; index < datasets.length; index++) {
         </tr>
         `
     }
-    ProductSold += Number(dataset.transaction_qty)
+    productSold += Number(dataset.transaction_qty)
     revenue += Number(dataset.unit_price) * Number(dataset.transaction_qty)
-    if (revenueByStore.filter(row=> row.id === dataset.store_id).length > 0 ) {
-        revenueByStore= revenueByStore.map(row => {
+    if (revenueByStore.filter(row => row.id === dataset.store_id).length > 0) {
+        revenueByStore = revenueByStore.map(row => {
             if (row.id === dataset.store_id) {
                 return {
                     ...row,
                     revenue: row.revenue + (Number(dataset.unit_price) * Number(dataset.transaction_qty))
                 }
-                
+
             }
             return row;
         })
     }
-    else{
+    else {
         revenueByStore.push({
             id: dataset.store_id,
             name: dataset.store_location,
@@ -57,32 +62,41 @@ for (let index = 0; index < datasets.length; index++) {
 
         })
     }
-    // console.log(dataset)
+    console.log(dataset)
 
     document.querySelector('#colom').innerHTML += `
     <tr>
     <td>${index +1}</td>
     <td>${dataset.transaction_id}</td>
-    <td>col-3</td>
-    <td>col-4</td>
-    <td>col-5</td>
-    <td>col-6</td>
-    <td>col-7</td>
-    <td>col-8</td>
+    <td>${dataset.transaction_date}</td>
+    <td>${dataset.transaction_time}</td>
+    <td>${dataset.transaction_qty}</td>
+    <td>${dataset.store_id}</td>
+    <td>${dataset.store_location}</td>
+    <td>${dataset.product_id}</td>
+    <td>${dataset.unit_price}</td>
+    <td>${dataset.product_category}</td>
+    <td>${dataset.product_type}</td>
+    <td>${dataset.product_detail}</td>
     </tr>`
 }
+
+let table = new DataTable('#all-table', {
+    // config options...
+});
+
 console.log(revenueByStore)
-document.querySelector('#top').innerHTML = htmlTopPerformance
-document.querySelector('#sold').innerHTML = ProductSold
-document.querySelector('#trans').innerHTML= datasets.length
+document.querySelector('#bodyPerformance').innerHTML = htmlTopPerformance
+document.querySelector('#sold').innerHTML = productSold
+document.querySelector('#trans').innerHTML = datasets.length
 document.querySelector('#rev').innerHTML = revenue
 
-function persen(items,totalRevenue){
+function persen(items, totalRevenue) {
     let hasil = []
     for (let index = 0; index < items.length; index++) {
         const item = items[index];
         hasil.push(
-           (item.revenue / totalRevenue * 100).toFixed(1)
+            (item.revenue / totalRevenue * 100).toFixed(1)
         )
     }
     return hasil
@@ -111,18 +125,18 @@ function createChart(element, type, label, datasets, options) {
 let pieChart = createChart(
     'pie-chart',
     'doughnut',
-    revenueByStore.map(row=> row.name),
+    revenueByStore.map(row => row.name),
     // ["Astoria", "Hell's Kitchen", "Lower Manhattan"],
     [
         {
-        label: 'trafic source',
-        data: persen(revenueByStore, revenue),
-        backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
-        ],
-    }],
+            label: 'trafic source',
+            data: persen(revenueByStore, revenue),
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+            ],
+        }],
 
     {
         // maintainAspectRatio: false,
@@ -172,7 +186,13 @@ const datasetsForChart = locations.map(location => {
     return {
         label: location,
         data: salesByLocationAndMonth[location],
-        backgroundColor: getRandomColor() // Function to generate random colors for each location
+        backgroundColor:
+            ['rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)']
+
+        // getRandomColor() 
+        // Function to generate random colors for each location
     };
 });
 
@@ -198,7 +218,7 @@ function createChartBar(element, type, labels, datasets, options) {
 }
 
 // Initialize the chart in your HTML
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const barChart = createChartBar(
         'bar-chart',
         'bar',
@@ -259,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //     ],
 
 //     {
-    
+
 //     }
 // );
 
@@ -313,7 +333,7 @@ function createChartHorBar(element, type, labels, datasets, options) {
 }
 
 // Initialize the chart in your HTML
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const barChart = createChartHorBar(
         'bar-chart-2',
         'bar',
@@ -400,7 +420,7 @@ function createChartLine(element, type, labels, datasets, options) {
 }
 
 // Initialize the chart in your HTML after DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const lineChart = createChartLine(
         'line-chart',
         'line',
@@ -438,7 +458,5 @@ document.addEventListener('DOMContentLoaded', function() {
 //     }],
 // );
 
-let table = new DataTable('#table', {
-    // config options...
-});
+
 

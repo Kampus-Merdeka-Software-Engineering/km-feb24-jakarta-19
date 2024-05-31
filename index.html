@@ -16,16 +16,75 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
 
 </head>
+<!--  === ini yang di repo ===  -->
 
 <body>
     <!-- ====== header ====== -->
     <div class="all-section">
+        <!-- ====== Sidebar navigation ====== -->
+        <aside>
+            <nav class="sidebar">
+                <div class="image-text">
+                    <span class="logo">
+                        <img src="asset/logo revou_1.png" alt="logo">
+                    </span>
+                    <div class="text-logo">
+                        <span class="team">TEAM 19</span>
+                        <span class="kota">Jakarta</span>
+                    </div>
+                </div>
+                <!-- ====== Menu  navigation ====== -->
+                <div class="menu-bar">
+                    <div class="menu">
+                        <ul><!-- class="menu-links" -->
+                            <li>
+                                <a href="#dashboard" class="active">
+                                    <i class='bx bxs-dashboard icons'></i>
+                                    <span class="text nav-text">Dashboard</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul> <!-- class="menu-links" -->
+                            <li>
+                                <a href="#">
+                                    <i class='bx bx-error-circle icons'></i>
+                                    <span class="text nav-text">About</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class='bx bx-log-out icons'></i>
+                                    <span class="text nav-text">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <!-- ====== navigation bawah ====== -->
+                    <!-- <div class="bottom-content">
+                        <li class="">
+                            <a href="#">
+                                <i class='bx bx-log-out icons'></i>
+                                <span class="text nav-text">Logout</span>
+                            </a>
+                        </li>
+                    </div> -->
+                </div>
+            </nav>
+        </aside>
+        <!-- ======= main section ======== -->
         <div class="main-section">
             <header class="head-content">
                 <nav>
-                    <button class="menu-btn">
-                        <i class='bx bx-menu'></i>
-                    </button>
+                    <div id="menu-button">
+                        <input type="checkbox" id="menu-checkbox">
+                        <label for="menu-checkbox" id="menu-label">
+                            <div id="humburger"><i class='bx bx-menu'></i></div>
+                        </label>
+                    </div>
+                    <!-- <i class='bx bx-menu'></i> -->
                     <a href="#" class="link-nav">DASHBOARD</a>
                     <form action="#">
                         <div class="form-input">
@@ -42,205 +101,130 @@
                 </nav>
             </header>
             <!-- ========= Main container ======== -->
-            <section>
-                <!-- ====== Sidebar navigation ====== -->
-        <aside>
-            <nav class="sidebar">
-                <div class="image-text">
-                    <span class="logo">
-                        <img src="asset/logo revou_1.png" alt="logo">
-                    </span>
-                    <div class="text">
-                        <span class="team">TEAM 19</span>
-                        <span class="kota"> Section Jakarta</span>
+            <div class="main-container">
+                <div class="text-chart">
+                    <p id="text1">Analytics Overview</p>
+                    <p id="text2">Here's what's happening with your Maven Store today</p>
+                </div>
+                <!-- ==== filter ==== -->
+                <div class="filter">
+                    <div class="filter-1">
+
+                        <select name="" id="store">
+                            <!-- <label for="store" id="text-name">Store</label> -->
+                            <option value="astoria">Astoria</option>
+                            <option value="lower">Lower Manhattan</option>
+                            <option value="hell">Hell's Kitchen</option>
+                        </select>
+                    </div>
+                    <div class="filter-2">
+                        <label for="">Start</label>
+                        <input type="date" id="dateStart">
+                        <label for="">End</label>
+                        <input type="date" id="dateEnd">
                     </div>
                 </div>
-                <!-- ====== Menu  navigation ====== -->
-                <div class="menu-bar">
-                    <div class="menu">
-                        <ul class="menu-links">
-                            <li class="nav-link">
-                                <a href="#dashboard" class="active">
-                                    <i class='bx bxs-dashboard icons'></i>
-                                    <span class="text nav-text">Dashboard</span>
-                                </a>
-                            </li>
-                        <!-- </ul> -->
-                        <!-- <ul class="menu-links">
-                            <li class="nav-link">
-                                <a href="table.html">
-                                    <i class='bx bxs-bar-chart-alt-2 icons'></i>
-                                    <span class="text nav-text">Table</span>
-                                </a>
-                            </li>
-                        </ul> -->
-                        <!-- <ul class="menu-links"> -->
-                            <li class="nav-link">
-                                <a href="#">
-                                    <i class='bx bx-error-circle icons'></i>
-                                    <span class="text nav-text">About</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- ====== navigation bawah ====== -->
-                    <div class="bottom-content">
-                        <ul class="menu-links">
-                            <li class="">
-                                <a href="#">
-                                    <i class='bx bx-cog icons'></i>
-                                    <span class="text nav-text">Settings</span>
-                                </a>
-                            </li>
-                            <li class="">
-                                <a href="#">
-                                    <i class='bx bx-log-out icons'></i>
-                                    <span class="text nav-text">Logout</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </aside>
-                <div class="main-container">
-                    <div class="text-chart">
-                        <p id="text1">Analytics Overview</p>
-                        <p id="text2">Here's what's happening with your Maven Store today</p>
-                    </div>
-                    <!-- ==== filter ==== -->
-                    <div class="filter">
-                        <div class="filter-1">
-
-                            <select name="" id="store">
-                                <!-- <label for="store" id="text-name">Store</label> -->
-                                <option value="astoria">Astoria</option>
-                                <option value="lower">Lower Manhattan</option>
-                                <option value="hell">Hell's Kitchen</option>
-                            </select>
-                        </div>
-                        <div class="filter-2">
-                            <label for="">Start</label>
-                            <input type="date" id="dateStart">
-                            <label for="">End</label>
-                            <input type="date" id="dateEnd">
+                <!-- ======== CHART ===== -->
+                <div class="card-container">
+                    <div class="rectangle-1">
+                        <div class="card-name">Top Performance</div>
+                        <div class="performance">
+                            <table>
+                                <thead id="headPerformance">
+                                    <tr>
+                                        <th>Store</th>
+                                        <th>ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodyPerformance">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <!-- ======== CHART ===== -->
-                    <div class="card-container">
-                        <div class="rectangle-1">
-                            <div class="card-name">Top Performance</div>
-                            <div class="performance">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Store</th>
-                                            <th>ID</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="top">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
 
-                        <div class="rectangle-2">
-                            <div class="card-name">Product Sold</div>
-                            <div class="numbers" id="sold"></div>
-                            <!-- <i class='bx bxs-shopping-bag-alt'></i> -->
-                        </div>
-
-                        <div class="rectangle-3">
-                            <div class="card-name">Transactions</div>
-                            <div class="numbers" id="trans"></div>
-                            <!-- <i class='bx bxs-shopping-bag-alt'></i> -->
-                        </div>
-
-                        <div class="rectangle-4">
-                            <div class="card-name">Revenue</div>
-                            <div class="numbers" id="rev"></div>
+                    <div class="rectangle-2">
+                        <div class="ikon">
                             <i class='bx bxs-shopping-bag-alt'></i>
                         </div>
-
-                        <div class="rectangle-5">
-                            <div class="card-name">Product Sold By Store Location</div>
-                            <canvas id="bar-chart"></canvas>
+                        <div class="card-name">
+                            <div class="numbers" id="sold"></div>
+                            <label for="">Product Sold</label>
                         </div>
-
-                        <div class="rectangle-6">
-                            <div class="card-name">Revenue By Store Location</div>
-                            <canvas id="pie-chart"></canvas>
-                        </div>
-
-                        <div class="rectangle-7">
-                            <div class="card-name">Top 5 Product Category Smallest Sold</div>
-                            <canvas id="bar-chart-2"></canvas>
-                        </div>
-
-                        <div class="rectangle-8">
-                            <div class="card-name">Quantity Sold By Time</div>
-                            <canvas id="line-chart"></canvas>
-                        </div>
-
-                    </div>
-                    <!-- ======= TABLE ====== -->
-                    <div class="table-container">
-                        <div class="text-table">Table Dataset Coffee Shop Sales</div>
-                        <table id="table">
-                            <thead>
-                                <tr>
-                                    <th>numbers</th>
-                                    <th>transaction_id</th>
-                                    <th>transaction_date</th>
-                                    <th>transaction_time</th>
-                                    <th>transaction_qty</th>
-                                    <th>store_id</th>
-                                    <th>store_location</th>
-                                    <th>product_id</th>
-                                </tr>
-                            </thead>
-                            <tbody id="colom">
-                                <!-- <tr>
-                                    <td>col-1</td>
-                                    <td>col-2</td>
-                                    <td>col-3</td>
-                                    <td>col-4</td>
-                                    <td>col-5</td>
-                                    <td>col-6</td>
-                                    <td>col-7</td>
-                                    <td>col-8</td>
-                                </tr>
-                                <tr>
-                                    <td>col-1</td>
-                                    <td>col-2</td>
-                                    <td>col-3</td>
-                                    <td>col-4</td>
-                                    <td>col-5</td>
-                                    <td>col-6</td>
-                                    <td>col-7</td>
-                                    <td>col-8</td>
-                                </tr>
-                                <tr>
-                                    <td>col-1</td>
-                                    <td>col-2</td>
-                                    <td>col-3</td>
-                                    <td>col-4</td>
-                                    <td>col-5</td>
-                                    <td>col-6</td>
-                                    <td>col-7</td>
-                                    <td>col-8</td>
-                                </tr> -->
-                            </tbody>
-
-                        </table>
                     </div>
 
-                    <!-- footer -->
-                    <footer class="footer">
-                        <p>&copy 2024 Team 19 Jakarta</p>
-                    </footer>
+                    <div class="rectangle-3">
+                        <div class="ikon">
+                            <i class='bx bxs-group'></i>
+                        </div>
+                        <div class="card-name">
+                            <div class="numbers" id="trans"></div>
+                            <label for="">Transactions</label>
+                        </div>
+                    </div>
+
+                    <div class="rectangle-4">
+                        <div class="ikon">
+                            <i class='bx bxs-coin-stack'></i>
+                        </div>
+                        <div class="card-name">
+                            <div class="numbers" id="rev"></div>
+                            <label for="">Revenue</label>
+                        </div>
+                    </div>
+
+                    <div class="rectangle-5">
+                        <div class="card-name">Product Sold By Store Location</div>
+                        <canvas id="bar-chart"></canvas>
+                    </div>
+
+                    <div class="rectangle-6">
+                        <div class="card-name">Revenue By Store Location</div>
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+
+                    <div class="rectangle-7">
+                        <div class="card-name">Top 5 Product Category Smallest Sold</div>
+                        <canvas id="bar-chart-2"></canvas>
+                    </div>
+
+                    <div class="rectangle-8">
+                        <div class="card-name">Quantity Sold By Time</div>
+                        <canvas id="line-chart"></canvas>
+                    </div>
+
                 </div>
-            </section>
+                <!-- ======= TABLE ====== -->
+                <div class="table-container">
+                    <div class="text-table">Table Dataset Coffee Shop Sales</div>
+                    <table id="all-table">
+                        <thead>
+                            <tr>
+                                <th>numbers</th>
+                                <th>transaction_id</th>
+                                <th>transaction_date</th>
+                                <th>transaction_time</th>
+                                <th>transaction_qty</th>
+                                <th>store_id</th>
+                                <th>store_location</th>
+                                <th>product_id</th>
+                                <th>unit_price</th>
+                                <th>product_category</th>
+                                <th>product_type</th>
+                                <th>product_detail</th>
+                            </tr>
+                        </thead>
+                        <tbody id="colom">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- footer -->
+            <div class="fotter-section">
+                <footer class="footer">
+                    <p>&copy 2024 Team 19 Jakarta</p>
+                </footer>
+            </div>
         </div>
     </div>
 

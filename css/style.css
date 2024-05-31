@@ -27,63 +27,42 @@
 
 body {
   height: 100vh;
+  /* position: sticky; */
+  flex-wrap: nowrap;
   background: var(--primary-color-light);
+  /* max-width: 100%; */
+  /* overflow-x: hidden; */
+
 }
-
-/* ==== defult ==== */
-.sidebar .image-text .text {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--text-color);
-}
-
-.sidebar .logo {
-  min-width: 60px;
-  display: flex;
-  align-items: center;
-}
-
-
-/* =========== sidebar ========== */
-aside {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  /* top: 0; */
-  left: 0;
-  height: 100%;
-  z-index: 10000;
-  transition: all 0.3s ease;
-  width: 250px;
-  padding: 3px 10px;
-  background-color: var(--sidebar-color);
-}
-
-aside.hide {
-  /* position: absolute; */
-  height: 100%;
-  left: -250px;
-  transition: all 0.3s ease;
-}
-
-
 
 .all-section {
   display: flex;
+  /* min-height: 100vh; */
 }
 
-.main-section {
-  width: 100%;
+
+/* =========== sidebar / Section Kiri========== */
+aside {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: auto;
+  /* width: 250px; */
+  /* padding: 3px 10px; */
+  padding: 10px;
+  display: flex;
+  /* border: 2px solid #201c1d; */
+  background-color: var(--sidebar-color);
+  transition: all ease-in .3s;
 }
 
-/* ==== logo ==== */
-.logo img {
-  width: 50px;
-  height: auto;
-  padding-top: 10px;
-  padding-left: 15px;
-
+/* == menghide sidebar == */
+.sidebar.hide{
+  width: 70px;
+  transition: all ease-in-out .4s;
 }
+
+/* ==== logo text ==== */
 
 .sidebar .image-text {
   display: flex;
@@ -91,109 +70,161 @@ aside.hide {
   padding-bottom: 20px;
 }
 
-/* ==== menu ==== */
-
-.sidebar li {
-  height: 50px;
-  margin-top: 5px;
-  list-style: none;
-  display: flex;
-  align-items: center;
-
-}
-
-.sidebar li .icons {
-  font-size: 20px;
+.sidebar .image-text .logo {
   min-width: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.sidebar li .icons,
-.sidebar li .text {
-  color: var(--text-color);
-  transition: var(--tran-03);
-}
-
-/* ngatur text nya jadi atas bawah */
-.image-text .text {
+.sidebar .image-text .text-logo {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  color: var(--text-color);
 }
 
-.text .team {
+/* == tulisan team 19 menghilang == */
+.sidebar.hide .image-text .text-logo{
+  display: none;
+}
+
+.text-logo .team {
+  font-size: 16px;
   font-weight: 600;
-  margin-top: 10px;
 }
 
-.text .kota {
-  margin-top: -5px;
+.text-logo .kota {
+  /* margin: 5px; */
+  /* display: flex; */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ==== img logo revou ==== */
+.logo img {
+  width: 50px;
+  height: auto;
+  margin: 10px;
+  /* padding-top: 10px; */
+  /* padding-left: 15px; */
+
+}
+
+
+/* ==== Menu Sidebar ==== */
+
+.sidebar .menu-bar {
+  height: auto;
+  width: 100%;
+  /* margin-top: 10px; */
+  display: flex;
+  align-items: center;
+  /* border:  2px solid #ede3e3; */
+}
+
+/* icons sidebar */
+.sidebar .menu .icons {
+  font-size: 20px;
+  /* min-width: 50px; */
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.sidebar  .text {
+  color: var(--text-color); 
+}
+
+/*  == mengilangkan text di sidebar == */
+.sidebar.hide .menu li .text{
+  display: none;
 }
 
 
 /* ==== navigation menu ==== */
 
-/* .menu-bar {
-  display: flex;
-  justify-content: space-between;
-} */
+.sidebar .menu li{
+  /* margin: 5px; */
+  list-style: none;
+  justify-content: center;
+  padding: 5px;
 
-.sidebar li a {
+
+
+}
+
+.sidebar .menu li a {
   text-decoration: none;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   align-items: center;
-  transition: var(--tran-04);
-  width: 100%;
-}
-
-
-/* jan lupa buat yang aktifnyo jg */
-/* active hover */
-.sidebar li a:hover,
-a.active {
-  background: var(--secondary-color);
-  height: 50px;
+  transition: all ease-in .4s;
   border-radius: 10px;
+  padding: 10px 20px 10px 10px;
+  /* margin: 5px; */
+  /* border: 2px solid #201c1d; */
+  
 }
 
-/* .sidebar li a.active { 
-    background: var(--secondary-color);
-    color: var(--icon-color);
-    border-radius: 10px;
-} */
 
+/* active */
+.sidebar li a.active{
+  background: var(--secondary-color);
+  color: var(--icon-color);
+}
+
+/* hover */
+.sidebar li a:hover {
+  background: var(--secondary-color);
+  color: var(--icon-color);
+}
+
+/* active text color */
+.sidebar li a.active .icons,
+.sidebar li a.active .text {
+  color: var(--icon-color); /* Mengatur warna teks ikon dan teks dalam state aktif */
+}
+
+/* hover text color */
 .sidebar li a:hover .icons,
 .sidebar li a:hover .text {
   color: var(--icon-color);
 }
 
 
-
-/* bottom-content */
-.sidebar .menu-bar {
-  /* height: calc(100% - 5px); */
+/* dak berguno */
+/* .sidebar .menu-bar {
+  height: calc(100% - 5px);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   font-size: 16px;
   font-weight: 500;
-}
+} */
 
-.sidebar .menu-bar .bottom-content {
-  /* position: absolute; */
+/* .sidebar .menu #bottom {
+  position: absolute;
   bottom: 0;
   width: 90%;
+} */
+
+
+/* ============= Section Main kanan =============== */
+
+.main-section {
+  width: 100%;
+  /* border: 2px solid #19e3dc; */
+  overflow: hidden;
 }
 
 
 /* ============= header content =============== */
 
-.menu-btn {
-  border: none;
-  background-color: white;
-}
+/* permasalahan di header : kalau posisinya di berikan fixed maka
+haeder kelaur dari layar, namun jika di berikan posisi stiky header ikut ke
+scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelaur dari layar */
 
 .head-content {
   position: sticky;
@@ -203,6 +234,7 @@ a.active {
   background-color: var(--primary-color-light);
   color: #dcdbdb;
   box-shadow: 2px 1px 5px 1px;
+  /* border: 3px solid #c51547; */
 }
 
 .head-content nav {
@@ -211,7 +243,7 @@ a.active {
   display: flex;
   align-items: center;
   grid-gap: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 
@@ -308,28 +340,51 @@ a.active {
   padding-top: 2px;
 }
 
-/* ============ Chart container ========= */
+#menu-button{
+  /* width: 24px; */
+  height: 50px;
+  font-size: 32px;
+  font-weight: 700;
+  overflow: hidden;
+  
+}
+
+
+#menu-label {
+  position: relative;
+  display: block;
+  /* height: 50px; */
+  cursor: pointer;
+}
+
+#menu-checkbox{
+  display: none;
+}
+
+/* ============ main container ========= */
 
 .main-container {
   width: 100%;
-  overflow: hidden;
   cursor: pointer;
-  /* border: 1px solid purple; */
+  padding: 10px;
+  /* border: 3px solid purple; */
 }
+
+/* ============ chart container ========= */
 
 /* === text di dalam dashboard === */
 .text-chart #text1 {
   font-size: 20px;
   font-weight: 700;
   padding-top: 10px;
-  padding-left: 20px;
+  padding-left: 10px;
   color: var(--icon-color);
 }
 
 .text-chart #text2 {
   font-size: 14px;
   font-weight: 400;
-  padding-left: 20px;
+  padding-left: 10px;
   padding-bottom: 10px;
   color: #979797;
 }
@@ -338,7 +393,7 @@ a.active {
 
 .filter {
   display: flex;
-  margin: 20px;
+  padding: 10px;
   gap: 10px;
   cursor: pointer;
 }
@@ -364,7 +419,6 @@ a.active {
   font-size: 16px;
   font-weight: 500;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.15); */
 }
 
 /* .filter-1 #store #text-name{
@@ -390,51 +444,31 @@ a.active {
   font-size: 16px;
   font-weight: 500;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.15); */
 }
 
 /* .filter-1 #store{
   width: 200px;
   height: 40px;
 } */
+
 .filter-2 #dateStart {
   width: 100%;
   margin: 10px;
 
 }
 
-/* .filter-3{
-  display: flex;
-  width: 200px;
-  height: 40px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background: #ffffff;
-  border: 1px solid #EBEBEC;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.15);
-} */
-
 /* ================ CARD ==========*/
-
 .card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   /* grid-template-rows: repeat(3, 1fr); */
-
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-
-  justify-content: center;
-  text-align: center;
+  /* justify-content: center; */
+  /* text-align: center; */
   /* flex-wrap: wrap; */
-  width: calc(100%-250px);
-
-  padding: 20px;
-
+  /* width: calc(100%-250px); */
+  padding: 10px;
   grid-template-areas:
     "area-1 area-2 area-3 area-4"
     "area-5 area-5 area-6 area-6"
@@ -448,15 +482,11 @@ a.active {
   /* width: 32%; */
   background: #ffffff;
   border-radius: 10px;
-  padding: 10px;
+  border: 1px solid #19e3dc;
+  /* padding: 0px; */
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* overflow: auto; */
 }
 
-.rectangle-1 .performance{
- height: 70px;
- overflow: auto;
-}
 
 .rectangle-2 {
   grid-area: area-2;
@@ -465,10 +495,27 @@ a.active {
   height: 128px;
   background: #ffffff;
   border-radius: 10px;
-  padding: 10px;
+
+  padding: 24px;
+  align-items: center;
+  display: flex;
+  grid-gap: 24px;
+
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
-  /* box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.15); */
+  
+}
+
+.rectangle-2 .ikon {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  background: #dcb5b5;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: lightblue; */
+  color: rgb(70, 70, 188);
 }
 
 .rectangle-3 {
@@ -478,9 +525,22 @@ a.active {
   height: 128px;
   background: #ffffff;
   border-radius: 10px;
-  padding: 10px;
+  padding: 24px;
+  align-items: center;
+  display: flex;
+  grid-gap: 24px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.15); */
+}
+
+.rectangle-3 .ikon {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  background: #e1e0e0;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .rectangle-4 {
@@ -490,9 +550,22 @@ a.active {
   height: 128px;
   background: #ffffff;
   border-radius: 10px;
-  padding: 10px;
+  padding: 24px;
+  align-items: center;
+  display: flex;
+  grid-gap: 24px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.15); */
+}
+
+.rectangle-4 .ikon {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  background: #e1e0e0;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .rectangle-5 {
@@ -501,7 +574,7 @@ a.active {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.25); */
+
 }
 
 .rectangle-6 {
@@ -510,7 +583,6 @@ a.active {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.25); */
 }
 
 .rectangle-7 {
@@ -520,7 +592,6 @@ a.active {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25); */
 }
 
 .rectangle-8 {
@@ -530,21 +601,64 @@ a.active {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25); */
 }
 
-.rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 .card-name{
-  font-size: 18px;
-  font-weight: 500;
+.rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4, 
+.rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 
+.card-name{
+  font-size: 14px;
+  font-weight: 400;
   padding: 20px;
-
+  /* margin: 10px; */
 }
 
-[class*='rectangle-'] {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+/* .rectangle-1 .performance{
+  height: 70px;
+  overflow: auto;
+ } */
+ 
+ /* .rectangle-1 table #tableHead{
+   justify-content: space-between;
+   align-items: center;
+   overflow: auto;
+ 
+ } */
+ 
+/* ======= top performance ==========  */
+.rectangle-1 .performance table{
+  /* justify-content: space-between; */
+  border: 1px solid #cf1818;
+  width: 100%;
+  /* height: 70px; */
+  overflow: auto; 
+  padding-bottom: 30px;
+  border-collapse: collapse;
 }
+.rectangle-1 .performance table #headPerformance{
+  /* color: #702222; */
+  padding: 10px;
+  /* margin: 10px; */
+  justify-content: space-between;
+  text-align: left;
+  background: #dcdbdb;
+  position: static;
+  font-size: 16px;
+  /* border: 2px solid #1db594; */
+  /* background-color: #b47a44; */
+
+  
+}
+.rectangle-1 .performance table #bodyPerformance{
+  /* border: 2px solid #ed6b09; */
+  padding: 20px;
+  text-align: left;
+  font-size: 14px;
+  /* overflow: auto; */
+}
+
+/* .rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4 .card-name{
+  font-weight: 400;
+} */
 
 /* ========== CHART ============= */
 
@@ -576,40 +690,57 @@ canvas {
   padding: 10px;
 }
 
-/* ============= TABLE ============ */
+/* ============= TABLE  ============ */
 
 .table-container {
-  /* background: #7676de; */
-  /* border: 1px solid #b40808; */
+  /* position: sticky; */
+  /* display: flex; */
   background: #ffffff;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  /* box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.25); */
   padding: 20px;
   margin: 20px 20px 0 20px;
+
+  /* margin: 20px; */
+  /* padding-right: 40px ; */
   border-radius: 10px;
   flex-wrap: nowrap;
   font-weight: 450;
+  overflow: auto;
+  width: 100%;
+  /* max-width: 100%; */
+  border: 2px solid #e0f557;
+  
 }
 
 .table-container .text-table {
   padding-bottom: 20px;
   font-size: 20px;
   font-weight: 500;
+  flex-wrap: nowrap;
 
 }
 
-#table {
-  position: relative;
+.table-container .all-table #table {
+  /* position: relative; */
   width: 100%;
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: nowrap; */
   /* background: #eda7a7; */
+  /* overflow: auto; */
 }
 
-#table thead {
+.table-container .all-table #table thead {
   background: #F1F3F9;
+  padding: 10px;
+  text-align: left;
+  /* border-bottom: 2px solid black; */
 }
 
-#table tbody {
-  background: #F8F9FC;
+.table-container .all-table #table {
+  /* background-color: #41548e; */
+  font-weight: 300;
+  font-size: 14px;
 }
 
 /* =======================  FOOTER ======================*/
@@ -626,11 +757,4 @@ footer {
   font-weight: 700;
   z-index: 23;
 }
-
 /* ==== END FOOTER ==== */
-
-/* ========================= Card Table ============================== */
-
-
-
-/* =========================== card table end ======================== */
