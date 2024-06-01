@@ -53,7 +53,7 @@ aside {
   display: flex;
   /* border: 2px solid #201c1d; */
   background-color: var(--sidebar-color);
-  transition: all ease-in .3s;
+  transition: all ease-in .4s;
 }
 
 /* == menghide sidebar == */
@@ -228,7 +228,7 @@ haeder kelaur dari layar, namun jika di berikan posisi stiky header ikut ke
 scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelaur dari layar */
 
 .head-content {
-  position: fixed;
+  position: sticky;
   top: 0;
   /* right: 0; */
   /* left: 0; */
@@ -237,7 +237,7 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   /* background-color: var(--primary-color-light); */
   color: #dcdbdb;
   box-shadow: 2px 1px 5px 1px;
-  border: 3px solid #b7e66c;
+  /* border: 3px solid #b7e66c; */
   /* box-sizing: border-box; */
 }
 
@@ -379,7 +379,7 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   cursor: pointer;
   padding: 10px;
   /* border: 3px solid purple; */
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 /* ============ chart container ========= */
@@ -408,116 +408,113 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 .filter {
   display: flex;
-  padding: 10px;
-  gap: 10px;
-  cursor: pointer;
-}
-
-/* .filter-1 .icons{
-  font-size: 25px;
-  min-width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-.filter-1 #store{
-  display: flex;
-  width: 200px;
-  height: 40px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background: #ffffff;
-  border: 1px solid #EBEBEC;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-}
-
-/* .filter-1 #store #text-name{
-  z-index: 3;
-} */
-
-/* .filter-1 .bx .bxs-map-pin{
-  font-size: 20px;
-  font-weight: 500;
-} */
-
-
-.filter-2 {
-  display: flex;
-  /* width: 300px; */
-  height: 40px;
-  align-items: center;
-  justify-content: space-around;
-  padding: 10px;
-  /* background: #e63030; */
-  border: 1px solid #EBEBEC;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-}
-
-/* .filter-1 #store{
-  width: 200px;
-  height: 40px;
-} */
-
-.filter-2 #dateStart {
-  width: 100%;
   margin: 10px;
+  gap: 10px;
+}
 
+
+  /* background-color: #9a7851; */
+  /* border: 1px solid #f57d05; */
+
+#store{
+  padding: 10px 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-right: 30px;
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+  border: none;
+}
+
+#store:focus,
+#store:hover{
+  outline: none;
+  /* border: 1px solid #ca9c9c; */
+  /* background-color: #979797; */
+}
+
+#store option{
+  background: #ffffff;
+}
+
+.filter-2{
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+  border: #060606;
+
+}
+
+.filter-2 label {
+  margin-left: 6px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filter-2 input[type="date"] {
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  padding-right: 10px;
+  padding-left: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.filter-2 input[type="date"]:focus,
+.filter-2 input[type="date"]:hover{
+  outline: none;
+}
+
+::-webkit-calendar-picker-indicator{
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 /* ================ CARD ==========*/
 .card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* grid-template-rows: repeat(3, 1fr); */
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  /* justify-content: center; */
-  /* text-align: center; */
-  /* flex-wrap: wrap; */
-  /* width: calc(100%-250px); */
   padding: 10px;
   grid-template-areas:
     "area-1 area-2 area-3 area-4"
     "area-5 area-5 area-6 area-6"
     "area-7 area-7 area-8 area-8"
+    "area-9 area-9 area-9 area-9"
   ;
 }
 
 .rectangle-1 {
   grid-area: area-1;
   height: 128px;
-  /* width: 32%; */
   background: #ffffff;
   border-radius: 10px;
-  border: 1px solid #19e3dc;
-  /* padding: 0px; */
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
 }
 
-
 .rectangle-2 {
   grid-area: area-2;
-  /* width: 32%; */
-  /* height: 128vh; */
   height: 128px;
   background: #ffffff;
   border-radius: 10px;
-
   padding: 24px;
   align-items: center;
   display: flex;
   grid-gap: 24px;
-
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  
+
 }
 
 .rectangle-2 .ikon {
@@ -620,6 +617,8 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
 }
 
+
+
 .rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4, 
 .rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 
 .card-name{
@@ -629,53 +628,54 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   /* margin: 10px; */
 }
 
-/* .rectangle-1 .performance{
-  height: 70px;
-  overflow: auto;
- } */
- 
- /* .rectangle-1 table #tableHead{
-   justify-content: space-between;
-   align-items: center;
-   overflow: auto;
- 
- } */
- 
 /* ======= top performance ==========  */
-.rectangle-1 .performance table{
-  /* justify-content: space-between; */
-  border: 1px solid #cf1818;
+
+/* Untuk memastikan gaya diterapkan pada kontainer yang benar */
+/* .performance {
+  padding: 10px;
+  height:50px;
+  
+} */
+
+.performance .table-wrapper {
+  max-height: 70px; /* Sesuaikan tinggi maksimum sesuai kebutuhan */
+  overflow-y: auto; /* Aktifkan scroll vertikal */
+  /* border: 1px solid #cf1818; */
+  border-radius: 5px;
   width: 100%;
-  /* height: 70px; */
-  overflow: auto; 
-  padding-bottom: 30px;
+}
+
+.performance table {
+  width: 100%;
   border-collapse: collapse;
 }
-.rectangle-1 .performance table #headPerformance{
-  /* color: #702222; */
-  padding: 10px;
-  /* margin: 10px; */
-  justify-content: space-between;
+
+/* Gaya untuk header tabel */
+.performance table #headPerformance th {
+  padding-right: 10px;
+  padding-left: 10px;
   text-align: left;
   background: #dcdbdb;
-  position: static;
-  font-size: 16px;
-  /* border: 2px solid #1db594; */
-  /* background-color: #b47a44; */
-
-  
+  font-size: 14px;
+  position: sticky; /* Membuat header tetap terlihat saat scroll */
+  top: 0;
+  z-index: 1; /* Memastikan header berada di atas isi tabel */
 }
-.rectangle-1 .performance table #bodyPerformance{
-  /* border: 2px solid #ed6b09; */
-  padding: 20px;
+
+/* Gaya untuk body tabel */
+.performance table #bodyPerformance td {
+  padding-right: 10px;
+  padding-left: 10px;
   text-align: left;
   font-size: 14px;
-  /* overflow: auto; */
+  border-top: 1px solid #ddd; /* Menambahkan border atas pada setiap baris */
 }
 
-/* .rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4 .card-name{
-  font-weight: 400;
-} */
+/* Tambahan gaya untuk keseluruhan tabel */
+.performance table th, .performance table td {
+  border-bottom: 1px solid #ddd; /* Menambahkan border bawah pada header dan sel */
+}
+
 
 /* ========== CHART ============= */
 
@@ -709,22 +709,16 @@ canvas {
 
 /* ============= TABLE  ============ */
 
-.table-container {
-  /* position: sticky; */
-  /* display: flex; */
+/* .table-container {
   background: #ffffff;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
   padding: 20px;
   margin: 20px 20px 0 20px;
-
-  /* margin: 20px; */
-  /* padding-right: 40px ; */
   border-radius: 10px;
   flex-wrap: nowrap;
   font-weight: 450;
   overflow: auto;
   width: 100%;
-  /* max-width: 100%; */
   border: 2px solid #e0f557;
   
 }
@@ -738,27 +732,82 @@ canvas {
 }
 
 .table-container .all-table #table {
-  /* position: relative; */
   width: 100%;
   display: flex;
   justify-content: center;
-  /* flex-wrap: nowrap; */
-  /* background: #eda7a7; */
-  /* overflow: auto; */
 }
 
 .table-container .all-table #table thead {
   background: #F1F3F9;
   padding: 10px;
   text-align: left;
-  /* border-bottom: 2px solid black; */
 }
 
 .table-container .all-table #table {
-  /* background-color: #41548e; */
   font-weight: 300;
   font-size: 14px;
+} */
+
+.table-container {
+  grid-area: area-9;
+  background: #ffffff;
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: auto;
+  width: 100%;
+  border: 2px solid #e0f557;
 }
+
+.table-container .text-table {
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container table thead {
+  background: #F1F3F9;
+}
+
+.table-container table th,
+.table-container table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap; /* Menyebabkan teks tidak terpotong dan tetap dalam satu baris */
+}
+
+.table-container table th {
+  background: #F1F3F9;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table-container table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.table-container table tbody tr:hover {
+  background: #f1f1f1;
+}
+
+.table-container table td {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+
+
+
+
 
 /* =======================  FOOTER ======================*/
 

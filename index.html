@@ -53,14 +53,13 @@
                             </li>
                         </ul>
                         <ul>
-                            <li>
+                            <li class="bottom-content">
                                 <a href="#">
                                     <i class='bx bx-log-out icons'></i>
                                     <span class="text nav-text">Logout</span>
                                 </a>
                             </li>
                         </ul>
-                        
                     </div>
                     <!-- ====== navigation bawah ====== -->
                     <!-- <div class="bottom-content">
@@ -109,9 +108,9 @@
                 <!-- ==== filter ==== -->
                 <div class="filter">
                     <div class="filter-1">
-
+                        <!-- <i class='bx bxs-map'></i> -->
                         <select name="" id="store">
-                            <!-- <label for="store" id="text-name">Store</label> -->
+                            <option disabled selected>Store</option>
                             <option value="All Option">All Option</option>
                             <option value="Astoria">Astoria</option>
                             <option value="Lower Manhattan">Lower Manhattan</option>
@@ -119,9 +118,9 @@
                         </select>
                     </div>
                     <div class="filter-2">
-                        <label for="">Start</label>
+                        <label for="">Date</label>
                         <input type="date" id="dateStart">
-                        <label for="">End</label>
+                        <label for="">To</label>
                         <input type="date" id="dateEnd">
                     </div>
                 </div>
@@ -130,16 +129,19 @@
                     <div class="rectangle-1">
                         <div class="card-name">Top Performance</div>
                         <div class="performance">
-                            <table>
-                                <thead id="headPerformance">
-                                    <tr>
-                                        <th>Store</th>
-                                        <th>ID</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="bodyPerformance">
-                                </tbody>
-                            </table>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead id="headPerformance">
+                                        <tr>
+                                            <th>Store</th>
+                                            <th>ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="bodyPerformance">
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 

@@ -8,7 +8,7 @@ menuBtn.addEventListener('click', function () {
 });
 // TOGGLE SIDEBAR
 
-import datasets from "./../asset/dataset coffee shop selas.json" assert {
+import datasets from "./../asset/dataset coffee shop seles.json" assert {
     type: "json"
 }
 let topPerformance = []
@@ -175,7 +175,7 @@ function createChart(element, type, label, datasets, options) {
 
 };
 
-// =================== PIE CHART ================
+// =================== PIE CHART ================ //
 
 let pieChart = createChart(
     'pie-chart',
