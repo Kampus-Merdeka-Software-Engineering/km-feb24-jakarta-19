@@ -61,15 +61,6 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- ====== navigation bawah ====== -->
-                    <!-- <div class="bottom-content">
-                        <li class="">
-                            <a href="#">
-                                <i class='bx bx-log-out icons'></i>
-                                <span class="text nav-text">Logout</span>
-                            </a>
-                        </li>
-                    </div> -->
                 </div>
             </nav>
         </aside>
@@ -127,7 +118,7 @@
                 <!-- ======== CHART ===== -->
                 <div class="card-container">
                     <div class="rectangle-1">
-                        <div class="card-name">Top Performance</div>
+                        <div class="card-performance">Top Performance</div>
                         <div class="performance">
                             <div class="table-wrapper">
                                 <table>
@@ -169,7 +160,7 @@
                         <div class="ikon">
                             <i class='bx bxs-coin-stack'></i>
                         </div>
-                        <div class="card-name">$
+                        <div class="card-name">
                             <div class="numbers" id="rev"></div>
                             <label for="">Revenue</label>
                         </div>
@@ -195,34 +186,33 @@
                         <canvas id="line-chart"></canvas>
                     </div>
 
+                    <!-- ======== table  =========== -->
+                    <div class="table-container">
+                        <div class="text-table">Table Dataset Coffee Shop Sales</div>
+                        <table id="all-table">
+                            <thead>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>transaction_id</th>
+                                    <th>transaction_date</th>
+                                    <th>transaction_time</th>
+                                    <th>transaction_qty</th>
+                                    <th>store_id</th>
+                                    <th>store_location</th>
+                                    <th>product_id</th>
+                                    <th>unit_price</th>
+                                    <th>product_category</th>
+                                    <th>product_type</th>
+                                    <th>product_detail</th>
+                                </tr>
+                            </thead>
+                            <tbody id="colom">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <!-- ======= TABLE ====== -->
-                <div class="table-container">
-                    <div class="text-table">Table Dataset Coffee Shop Sales</div>
-                    <table id="all-table">
-                        <thead>
-                            <tr>
-                                <th>NO</th>
-                                <th>transaction_id</th>
-                                <th>transaction_date</th>
-                                <th>transaction_time</th>
-                                <th>transaction_qty</th>
-                                <th>store_id</th>
-                                <th>store_location</th>
-                                <th>product_id</th>
-                                <th>unit_price</th>
-                                <th>product_category</th>
-                                <th>product_type</th>
-                                <th>product_detail</th>
-                            </tr>
-                        </thead>
-                        <tbody id="colom">
-                        </tbody>
-                    </table>
-                </div>
-
             </div>
-            <!-- footer -->
+            <!-- ============== footer =================== -->
             <div class="fotter-section">
                 <footer class="footer">
                     <p>&copy 2024 Team 19 Jakarta</p>

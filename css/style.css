@@ -27,17 +27,11 @@
 
 body {
   height: 100vh;
-  /* position: sticky; */
-  /* flex-wrap: nowrap; */
   background: var(--primary-color-light);
-  /* max-width: 100%; */
-  /* overflow-x: hidden; */
-
 }
 
 .all-section {
   display: flex;
-  /* min-height: 100vh; */
 }
 
 
@@ -55,6 +49,7 @@ aside {
   background-color: var(--sidebar-color);
   transition: all ease-in .4s;
 }
+
 
 /* == menghide sidebar == */
 .sidebar.hide{
@@ -105,9 +100,6 @@ aside {
   width: 50px;
   height: auto;
   margin: 10px;
-  /* padding-top: 10px; */
-  /* padding-left: 15px; */
-
 }
 
 
@@ -116,16 +108,14 @@ aside {
 .sidebar .menu-bar {
   height: auto;
   width: 100%;
-  /* margin-top: 10px; */
   display: flex;
   align-items: center;
-  /* border:  2px solid #ede3e3; */
 }
+
 
 /* icons sidebar */
 .sidebar .menu .icons {
   font-size: 20px;
-  /* min-width: 50px; */
   padding: 5px;
   display: flex;
   align-items: center;
@@ -146,7 +136,6 @@ aside {
 /* ==== navigation menu ==== */
 
 .sidebar .menu li{
-  /* margin: 5px; */
   list-style: none;
   justify-content: center;
   padding: 5px;
@@ -157,15 +146,11 @@ aside {
 
 .sidebar .menu li a {
   text-decoration: none;
-  /* height: 100%; */
   display: flex;
   align-items: center;
   transition: all ease-in .4s;
   border-radius: 10px;
   padding: 10px 20px 10px 10px;
-  /* margin: 5px; */
-  /* border: 2px solid #201c1d; */
-  
 }
 
 
@@ -194,29 +179,10 @@ aside {
 }
 
 
-/* dak berguno */
-/* .sidebar .menu-bar {
-  height: calc(100% - 5px);
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  font-size: 16px;
-  font-weight: 500;
-} */
-
-/* .sidebar .menu #bottom {
-  position: absolute;
-  bottom: 0;
-  width: 90%;
-} */
-
-
 /* ============= Section Main kanan =============== */
 
 .main-section {
   max-width: 100%;
-  /* position: relative; */
-  /* border: 2px solid #19e3dc; */
   overflow: hidden;
 }
 
@@ -227,42 +193,37 @@ aside {
 haeder kelaur dari layar, namun jika di berikan posisi stiky header ikut ke
 scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelaur dari layar */
 
+
 .head-content {
   position: sticky;
   top: 0;
-  /* right: 0; */
-  /* left: 0; */
   width: 100%;
-  /* z-index: 2; */
-  /* background-color: var(--primary-color-light); */
   color: #dcdbdb;
+  padding: 0 24px;
   box-shadow: 2px 1px 5px 1px;
-  /* border: 3px solid #b7e66c; */
-  /* box-sizing: border-box; */
+  /* border: 2px solid #5e5cee; */
 }
 
 .head-content nav {
-  /* position: fixed; */
   height: 56px;
   width: 100%;
-  /* left: 0; */
-  padding: 0 24px;
   display: flex;
   align-items: center;
   grid-gap: 10px;
   z-index: 2;
   background-color: var(--primary-color-light);
   justify-content: space-evenly;
-  /* border: 3px solid #c51547; */
 }
 
-/* picture profile */
+/* === picture profile ===*/
 .head-content nav a img {
   height: 30px;
   width: 30px;
   border-radius: 50%;
   object-fit: cover;
+
 }
+/* ==============================================  */
 
 /* kursor */
 .head-content nav .bx.bx-menu {
@@ -297,7 +258,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   align-items: center;
   height: 35px;
   width: 100%;
-  /* gap: 1; */
   border-radius: 10px;
   padding-left: 2px;
   box-shadow: 2px 1px 2px 2px;
@@ -305,9 +265,7 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 
 .head-content nav form .form-input input {
-  /* flex-grow: 1; */
   background-color: var(--primary-color-light);
-  /* background: #F17401; */
   padding: 7px;
   border-radius: 0 10px 10px 0px;
   height: 100%;
@@ -332,7 +290,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   outline: #E4E4E7;
   padding: 9px;
   color: var(--sidebar-color);
-  /* warna search icon 737375*/
   cursor: pointer;
 }
 
@@ -351,7 +308,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 }
 
 #menu-button{
-  /* width: 24px; */
   height: 50px;
   font-size: 32px;
   font-weight: 700;
@@ -363,7 +319,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 #menu-label {
   position: relative;
   display: block;
-  /* height: 50px; */
   cursor: pointer;
 }
 
@@ -378,8 +333,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   /* padding-top: 20px; */
   cursor: pointer;
   padding: 10px;
-  /* border: 3px solid purple; */
-  /* margin-top: 50px; */
 }
 
 /* ============ chart container ========= */
@@ -412,10 +365,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   gap: 10px;
 }
 
-
-  /* background-color: #9a7851; */
-  /* border: 1px solid #f57d05; */
-
 #store{
   padding: 10px 10px;
   background-color: #ffffff;
@@ -431,8 +380,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 #store:focus,
 #store:hover{
   outline: none;
-  /* border: 1px solid #ca9c9c; */
-  /* background-color: #979797; */
 }
 
 #store option{
@@ -498,21 +445,23 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 .rectangle-1 {
   grid-area: area-1;
-  height: 128px;
+  height: 120px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
 }
 
+
+
 .rectangle-2 {
   grid-area: area-2;
-  height: 128px;
+  height: 120px;
   background: #ffffff;
   border-radius: 10px;
   padding: 24px;
   align-items: center;
   display: flex;
-  grid-gap: 24px;
+  grid-gap: 20px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
 
 }
@@ -523,24 +472,21 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   border-radius: 12px;
   background: #e1e0e0;
   color: #8a8ac9;
-  font-size: 32px;
+  font-size: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: lightblue; */
 }
 
 .rectangle-3 {
   grid-area: area-3;
-  /* width: 32%; */
-  /* height: 128vh; */
-  height: 128px;
+  height: 120px;
   background: #ffffff;
   border-radius: 10px;
-  padding: 24px;
+  /* padding: 20px; */
   align-items: center;
   display: flex;
-  grid-gap: 24px;
+  grid-gap: 20px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
 }
 
@@ -558,15 +504,13 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 .rectangle-4 {
   grid-area: area-4;
-  /* width: 32%; */
-  /* height: 128vh; */
-  height: 128px;
+  height: 120px;
   background: #ffffff;
   border-radius: 10px;
-  padding: 24px;
+  /* padding: 20px; */
   align-items: center;
   display: flex;
-  grid-gap: 24px;
+  grid-gap: 20px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
 }
 
@@ -584,7 +528,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 .rectangle-5 {
   grid-area: area-5;
-  /* width: 64.5%; */
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
@@ -593,7 +536,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 .rectangle-6 {
   grid-area: area-6;
-  /* width: 31.5%; */
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
@@ -601,8 +543,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 .rectangle-7 {
   grid-area: area-7;
-  /* width: 48.5%; */
-  /* height: 295px; */
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
@@ -610,8 +550,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 .rectangle-8 {
   grid-area: area-8;
-  /* width: 48.5%; */
-  /* height: 295px; */
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
@@ -619,23 +557,7 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 
 
-.rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4, 
-.rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 
-.card-name{
-  font-size: 14px;
-  font-weight: 400;
-  padding: 20px;
-  /* margin: 10px; */
-}
-
 /* ======= top performance ==========  */
-
-/* Untuk memastikan gaya diterapkan pada kontainer yang benar */
-/* .performance {
-  padding: 10px;
-  height:50px;
-  
-} */
 
 .performance .table-wrapper {
   max-height: 70px; /* Sesuaikan tinggi maksimum sesuai kebutuhan */
@@ -673,7 +595,37 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 /* Tambahan gaya untuk keseluruhan tabel */
 .performance table th, .performance table td {
-  border-bottom: 1px solid #ddd; /* Menambahkan border bawah pada header dan sel */
+  border-bottom: 1px solid #ddd; 
+}
+
+
+
+.rectangle-1 .card-performance{
+  text-align: center;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4, 
+.rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 
+.card-name{
+  padding: 10px;
+}
+
+.rectangle-2, .rectangle-3, .rectangle-4, .card-name .numbers{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.rectangle-2, .rectangle-3, .rectangle-4, .card-name label{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 .card-name{
+  text-align: center;
+  padding: 10px;
 }
 
 
@@ -681,14 +633,12 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 
 canvas {
   max-height: 85% !important;
-  /* max-width: auto !important; */
 }
 
 #pie-chart {
   height: 100%;
   flex-wrap: wrap;
   padding: 10px;
-  /* width: 20px; */
 
 }
 
@@ -709,58 +659,59 @@ canvas {
 
 /* ============= TABLE  ============ */
 
-/* .table-container {
-  background: #ffffff;
-  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  padding: 20px;
-  margin: 20px 20px 0 20px;
-  border-radius: 10px;
-  flex-wrap: nowrap;
-  font-weight: 450;
-  overflow: auto;
-  width: 100%;
-  border: 2px solid #e0f557;
-  
-}
-
-.table-container .text-table {
-  padding-bottom: 20px;
-  font-size: 20px;
-  font-weight: 500;
-  flex-wrap: nowrap;
-
-}
-
-.table-container .all-table #table {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.table-container .all-table #table thead {
-  background: #F1F3F9;
-  padding: 10px;
-  text-align: left;
-}
-
-.table-container .all-table #table {
-  font-weight: 300;
-  font-size: 14px;
-} */
-
 .table-container {
   grid-area: area-9;
   background: #ffffff;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
   padding: 20px;
-  margin: 20px;
   border-radius: 10px;
   overflow: auto;
   width: 100%;
-  border: 2px solid #e0f557;
 }
 
-.table-container .text-table {
+.table-container table {
+  padding-right: 20px;
+}
+
+.table-container table thead {
+  background-color: rgba(128, 128, 128, 0.751);
+  color: white;
+}
+
+.table-container tr {
+  font-size: 12px;
+  text-align: left;
+}
+
+.table-container table tbody {
+  font-weight: 400;
+
+}
+
+.table-container table tbody td {
+  border-bottom: 1px solid rgba(130, 130, 130, 0.402);
+  text-align: left !important;
+}
+
+.dt-layout-row {
+  display: none;
+  overflow-y: auto;
+}
+
+.dt-length label {
+  margin-left: 10px;
+}
+
+.table-container table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.table-container table tbody tr:hover {
+  background: #dddddd;
+}
+
+
+/* .table-container .text-table {
   padding-bottom: 20px;
   font-size: 20px;
   font-weight: 500;
@@ -780,7 +731,7 @@ canvas {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
-  white-space: nowrap; /* Menyebabkan teks tidak terpotong dan tetap dalam satu baris */
+  white-space: nowrap;
 }
 
 .table-container table th {
@@ -802,11 +753,7 @@ canvas {
 .table-container table td {
   font-size: 14px;
   font-weight: 300;
-}
-
-
-
-
+} */
 
 
 /* =======================  FOOTER ======================*/

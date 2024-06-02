@@ -237,27 +237,41 @@ datasets.forEach(dataset => {
 const locations = Object.keys(salesByLocationAndMonth);
 const months = ["January", "February", "March", "April", "May", "June"];
 
+
+
 const datasetsForChart = locations.map(location => {
+    let backgroundColor;
+
+    // Assign color based on location
+    if (location === "Astoria") {
+        backgroundColor = 'rgba(255, 0, 0, 0.2)'; // Red
+    } else if (location === "Hell's Kitchen") {
+        backgroundColor = 'rgba(255, 255, 0, 0.2)'; // Yellow
+    } else if (location === "Lower Manhattan") {
+        backgroundColor = 'rgba(0, 128, 0, 0.7)'; // Green
+    }
     return {
         label: location,
         data: salesByLocationAndMonth[location],
-        backgroundColor:
-            ['rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)']
-
-        // getRandomColor() 
-        // Function to generate random colors for each location
+        backgroundColor: backgroundColor,
+        borderColor: backgroundColor.replace('0.2', '1'), // Change the border color to match the bar color
+        // borderWidth: 1
+        // label: location,
+        // data: salesByLocationAndMonth[location],
+        // backgroundColor:
+            // ['rgba(75, 192, 192, 0.2)',
+            // 'rgb(54, 162, 235)',
+            // 'rgb(255, 205, 86)']
     };
 });
 
 // Function to generate random colors
-function getRandomColor() {
-    const r = Math.floor(Math.random() * 255);
-    const g = Math.floor(Math.random() * 255);
-    const b = Math.floor(Math.random() * 255);
-    return `rgb(${r}, ${g}, ${b})`;
-}
+// function getRandomColor() {
+//     const r = Math.floor(Math.random() * 255);
+//     const g = Math.floor(Math.random() * 255);
+//     const b = Math.floor(Math.random() * 255);
+//     return `rgb(${r}, ${g}, ${b})`;
+// }
 
 // Function to create a chart
 function createChartBar(element, type, labels, datasets, options) {
@@ -368,8 +382,8 @@ const datasetForChart = {
     datasets: [{
         label: 'Quantity Sold',
         data: data,
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(99, 171, 250, 0.6)',
+        borderColor: 'rgba(2, 91, 170, 1)',
         borderWidth: 1
     }]
 };
