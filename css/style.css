@@ -41,11 +41,8 @@ aside {
   top: 0;
   height: 100vh;
   width: auto;
-  /* width: 250px; */
-  /* padding: 3px 10px; */
   padding: 10px;
   display: flex;
-  /* border: 2px solid #201c1d; */
   background-color: var(--sidebar-color);
   transition: all ease-in .4s;
 }
@@ -140,8 +137,6 @@ aside {
   justify-content: center;
   padding: 5px;
 
-
-
 }
 
 .sidebar .menu li a {
@@ -152,7 +147,6 @@ aside {
   border-radius: 10px;
   padding: 10px 20px 10px 10px;
 }
-
 
 /* active */
 .sidebar li a.active{
@@ -169,7 +163,7 @@ aside {
 /* active text color */
 .sidebar li a.active .icons,
 .sidebar li a.active .text {
-  color: var(--icon-color); /* Mengatur warna teks ikon dan teks dalam state aktif */
+  color: var(--icon-color);
 }
 
 /* hover text color */
@@ -186,7 +180,6 @@ aside {
   overflow: hidden;
 }
 
-
 /* ============= header content =============== */
 
 /* permasalahan di header : kalau posisinya di berikan fixed maka
@@ -201,7 +194,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   color: #dcdbdb;
   padding: 0 24px;
   box-shadow: 2px 1px 5px 1px;
-  /* border: 2px solid #5e5cee; */
 }
 
 .head-content nav {
@@ -223,9 +215,9 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   object-fit: cover;
 
 }
-/* ==============================================  */
 
-/* kursor */
+
+/* === kursor === */
 .head-content nav .bx.bx-menu {
   cursor: pointer;
   font-size: 25px;
@@ -242,7 +234,7 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   text-decoration: none;
 }
 
-/* form search */
+/* === form search === */
 .head-content nav form {
   max-width: 600px;
   width: 90%;
@@ -250,7 +242,7 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   margin: auto;
 }
 
-/* form searchbar */
+/* === form searchbar ===*/
 .head-content nav form .form-input {
   display: flex;
   background: #f9f9f9;
@@ -451,8 +443,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
 }
 
-
-
 .rectangle-2 {
   grid-area: area-2;
   height: 120px;
@@ -560,9 +550,8 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 /* ======= top performance ==========  */
 
 .performance .table-wrapper {
-  max-height: 70px; /* Sesuaikan tinggi maksimum sesuai kebutuhan */
-  overflow-y: auto; /* Aktifkan scroll vertikal */
-  /* border: 1px solid #cf1818; */
+  max-height: 70px; 
+  overflow-y: auto;
   border-radius: 5px;
   width: 100%;
 }
@@ -579,9 +568,9 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   text-align: left;
   background: #dcdbdb;
   font-size: 14px;
-  position: sticky; /* Membuat header tetap terlihat saat scroll */
+  position: sticky; 
   top: 0;
-  z-index: 1; /* Memastikan header berada di atas isi tabel */
+  z-index: 1;
 }
 
 /* Gaya untuk body tabel */
@@ -597,8 +586,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
 .performance table th, .performance table td {
   border-bottom: 1px solid #ddd; 
 }
-
-
 
 .rectangle-1 .card-performance{
   text-align: center;
@@ -709,51 +696,6 @@ canvas {
 .table-container table tbody tr:hover {
   background: #dddddd;
 }
-
-
-/* .table-container .text-table {
-  padding-bottom: 20px;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.table-container table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table-container table thead {
-  background: #F1F3F9;
-}
-
-.table-container table th,
-.table-container table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  white-space: nowrap;
-}
-
-.table-container table th {
-  background: #F1F3F9;
-  font-weight: 600;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.table-container table tbody tr:nth-child(even) {
-  background: #f9f9f9;
-}
-
-.table-container table tbody tr:hover {
-  background: #f1f1f1;
-}
-
-.table-container table td {
-  font-size: 14px;
-  font-weight: 300;
-} */
 
 
 /* =======================  FOOTER ======================*/
