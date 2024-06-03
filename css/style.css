@@ -40,17 +40,21 @@ aside {
   position: sticky;
   top: 0;
   height: 100vh;
-  width: auto;
+  /* width: auto; */
   padding: 10px;
   display: flex;
   background-color: var(--sidebar-color);
-  transition: all ease-in .4s;
 }
 
+.sidebar{
+  transition: all ease-in-out .4s;
+  width: 180px;
+  overflow-x: hidden;
+}
 
 /* == menghide sidebar == */
 .sidebar.hide{
-  width: 70px;
+  width: 65px;
   transition: all ease-in-out .4s;
 }
 
@@ -127,6 +131,7 @@ aside {
 /*  == mengilangkan text di sidebar == */
 .sidebar.hide .menu li .text{
   display: none;
+
 }
 
 
@@ -136,6 +141,7 @@ aside {
   list-style: none;
   justify-content: center;
   padding: 5px;
+  /* transition: all ease-in-out .4s; */
 
 }
 
@@ -146,6 +152,8 @@ aside {
   transition: all ease-in .4s;
   border-radius: 10px;
   padding: 10px 20px 10px 10px;
+  /* transition: all ease-in .4s; */
+
 }
 
 /* active */
@@ -177,21 +185,17 @@ aside {
 
 .main-section {
   max-width: 100%;
-  overflow: hidden;
 }
 
 /* ============= header content =============== */
-
-/* permasalahan di header : kalau posisinya di berikan fixed maka
-haeder kelaur dari layar, namun jika di berikan posisi stiky header ikut ke
-scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelaur dari layar */
-
 
 .head-content {
   position: sticky;
   top: 0;
   width: 100%;
   color: #dcdbdb;
+  background-color: var(--primary-color-light);
+  z-index: 100;
   padding: 0 24px;
   box-shadow: 2px 1px 5px 1px;
 }
@@ -202,8 +206,6 @@ scroll, hmm gimana ya caranya agar haeder posisnya tetap di atas dan tidak kelau
   display: flex;
   align-items: center;
   grid-gap: 10px;
-  z-index: 2;
-  background-color: var(--primary-color-light);
   justify-content: space-evenly;
 }
 

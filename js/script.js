@@ -5,6 +5,7 @@ const sidebar = document.getElementsByClassName('sidebar')[0];
 menuBtn.addEventListener('click', function () {
     sidebar.classList.toggle('hide');
 
+
 });
 // TOGGLE SIDEBAR
 
@@ -32,7 +33,7 @@ for (let index = 0; index < datasets.length; index++) {
         revenueByStore = revenueByStore.map(row => {
             if (row.id === dataset.store_id) {
                 return {
-                   ...row,
+                    ...row,
                     revenue: row.revenue + (Number(dataset.unit_price) * Number(dataset.transaction_qty))
                 }
 
@@ -75,7 +76,7 @@ let table = new DataTable('#all-table', {
             name: 'transaction_qty'
         },
         {
-            data: 'store_id', // <--- Corrected column name
+            data: 'store_id',
             name: 'store_id'
         },
         {
@@ -107,16 +108,16 @@ let table = new DataTable('#all-table', {
 });
 
 table
-   .on('order.dt search.dt', function () {
+    .on('order.dt search.dt', function () {
         let i = 1;
 
         table
-           .cells(null, 0, { search: 'applied', order: 'applied' })
-           .every(function (cell) {
+            .cells(null, 0, { search: 'applied', order: 'applied' })
+            .every(function (cell) {
                 this.data(i++);
             });
     })
-   .draw();
+    .draw();
 
 document.querySelector('#bodyPerformance').innerHTML = htmlTopPerformance
 document.querySelector('#sold').innerHTML = productSold
@@ -211,9 +212,9 @@ const datasetsForChart = locations.map(location => {
         // label: location,
         // data: salesByLocationAndMonth[location],
         // backgroundColor:
-            // ['rgba(75, 192, 192, 0.2)',
-            // 'rgb(54, 162, 235)',
-            // 'rgb(255, 205, 86)']
+        // ['rgba(75, 192, 192, 0.2)',
+        // 'rgb(54, 162, 235)',
+        // 'rgb(255, 205, 86)']
     };
 });
 
@@ -391,74 +392,86 @@ document.querySelector('#store').addEventListener('change', event => {
 // Filter by date
 document.querySelectorAll('#dateStart, #dateEnd').forEach(input => {
     input.addEventListener('change', () => {
-      const startDate = new Date(document.querySelector('#dateStart').value);
-      const endDate = new Date(document.querySelector('#dateEnd').value);
-      const filteredRows = datasets.filter(row => {
-        const transactionDate = new Date(row.transaction_date);
-        return transactionDate >= startDate && transactionDate <= endDate;
-      });
-  
-      updateMetricsAndCharts(filteredRows, 'All Option');
+        const startDate = new Date(document.querySelector('#dateStart').value);
+        const endDate = new Date(document.querySelector('#dateEnd').value);
+        const filteredRows = datasets.filter(row => {
+            const transactionDate = new Date(row.transaction_date);
+            if (document.querySelector('#dateStart').value && document.querySelector('#dateEnd').value) {
+                return transactionDate >= startDate && transactionDate <= endDate;
+            } else if (document.querySelector('#dateStart').value) {
+                return transactionDate >= startDate
+            } else if (document.querySelector('#dateEnd').value) {
+                return transactionDate <= endDate
+            }
+
+
+            console.log(startDate, endDate);
+            // return transactionDate >= startDate && transactionDate <= endDate;
+            return true
+        });
+
+        updateMetricsAndCharts(filteredRows, 'All Option');
     });
-  });
-  
-  function updateMetricsAndCharts(rows, value) {
+});
+
+function updateMetricsAndCharts(rows, value) {
     let topPerformance = []
     let htmlTopPerformance = ""
     let productSold = 0
     let revenue = 0
     let revenueByStore = []
-  
+
     for (let index = 0; index < rows.length; index++) {
-      const dataset = rows[index];
-      if (!topPerformance.includes(dataset.store_id)) {
-        topPerformance.push(dataset.store_id)
-        htmlTopPerformance += `
+        const dataset = rows[index];
+        if (!topPerformance.includes(dataset.store_id)) {
+            topPerformance.push(dataset.store_id)
+            htmlTopPerformance += `
         <tr>
         <td>${dataset.store_location}</td>
         <td>${dataset.store_id}</td>
         </tr>
         `
-      }
-      productSold += Number(dataset.transaction_qty)
-      revenue += Number(dataset.unit_price) * Number(dataset.transaction_qty)
-      if (revenueByStore.filter(row => row.id === dataset.store_id).length > 0) {
-        revenueByStore = revenueByStore.map(row => {
-          if (row.id === dataset.store_id) {
-            return {
-              ...row,
-                revenue: row.revenue + (Number(dataset.unit_price) * Number(dataset.transaction_qty))
-            }
-  
-          }
-          return row;
-        })
-      } else {
-        revenueByStore.push({
-          id: dataset.store_id,
-          name: dataset.store_location,
-          revenue: 0
-        })
-      }
+        }
+        productSold += Number(dataset.transaction_qty)
+        revenue += Number(dataset.unit_price) * Number(dataset.transaction_qty)
+        if (revenueByStore.filter(row => row.id === dataset.store_id).length > 0) {
+            revenueByStore = revenueByStore.map(row => {
+                if (row.id === dataset.store_id) {
+                    return {
+                        ...row,
+                        revenue: row.revenue + (Number(dataset.unit_price) * Number(dataset.transaction_qty))
+                    }
+
+                }
+                return row;
+            })
+        } else {
+            revenueByStore.push({
+                id: dataset.store_id,
+                name: dataset.store_location,
+                revenue: 0
+            })
+        }
     }
-  
+
     document.querySelector('#bodyPerformance').innerHTML = htmlTopPerformance
     document.querySelector('#sold').innerHTML = productSold
     document.querySelector('#trans').innerHTML = rows.length
     document.querySelector('#rev').innerHTML = revenue.toFixed(2)
-  
+
     updatePieChart(revenueByStore, revenue, value)
     updateBarChart(rows)
     updateHorBarChart(rows)
     updateLineChart(rows)
-  
+
     // Update the table
-    if (rows.length > 0) {
-      table.clear();
-      table.rows.add(rows);
-      table.draw();
+    if (Array.isArray(rows)) {
+        table.clear();
+        table.rows.add(rows);
+        table.draw();
     }
-  }
+
+}
 
 function updatePieChart(revenueByStore, revenue, value) {
     let backgroundColor = []
@@ -505,27 +518,27 @@ function updateBarChart(rows) {
     const datasetsForChart = locations.map(location => {
         let backgroundColor;
 
-    // Assign color based on location
-    if (location === "Astoria") {
-        backgroundColor = 'rgba(255, 0, 0, 0.2)'; // Red
-    } else if (location === "Hell's Kitchen") {
-        backgroundColor = 'rgba(255, 255, 0, 0.2)'; // Yellow
-    } else if (location === "Lower Manhattan") {
-        backgroundColor = 'rgba(0, 128, 0, 0.7)'; // Green
-    }
-    return {
-        label: location,
-        data: salesByLocationAndMonth[location],
-        backgroundColor: backgroundColor,
-        borderColor: backgroundColor.replace('0.2', '1'), // Change the border color to match the bar color
-        // borderWidth: 1
-        // label: location,
-        // data: salesByLocationAndMonth[location],
-        // backgroundColor:
+        // Assign color based on location
+        if (location === "Astoria") {
+            backgroundColor = 'rgba(255, 0, 0, 0.2)'; // Red
+        } else if (location === "Hell's Kitchen") {
+            backgroundColor = 'rgba(255, 255, 0, 0.2)'; // Yellow
+        } else if (location === "Lower Manhattan") {
+            backgroundColor = 'rgba(0, 128, 0, 0.7)'; // Green
+        }
+        return {
+            label: location,
+            data: salesByLocationAndMonth[location],
+            backgroundColor: backgroundColor,
+            borderColor: backgroundColor.replace('0.2', '1'), // Change the border color to match the bar color
+            // borderWidth: 1
+            // label: location,
+            // data: salesByLocationAndMonth[location],
+            // backgroundColor:
             // ['rgba(75, 192, 192, 0.2)',
             // 'rgb(54, 162, 235)',
             // 'rgb(255, 205, 86)']
-    };
+        };
     });
 
     barChart.data.labels = months
@@ -548,8 +561,8 @@ function updateHorBarChart(rows) {
     });
 
     const sortedCategories = Object.entries(productCategorySales)
-       .sort((a, b) => a[1] - b[1])
-       .slice(0, 5);
+        .sort((a, b) => a[1] - b[1])
+        .slice(0, 5);
 
     const labels = sortedCategories.map(entry => entry[0]);
     const data = sortedCategories.map(entry => entry[1]);
@@ -559,7 +572,7 @@ function updateHorBarChart(rows) {
     barChartHor.update()
 }
 
-function updateLineChart(rows){
+function updateLineChart(rows) {
     const salesByHour = Array(24).fill(0);
 
     rows.forEach(dataset => {
