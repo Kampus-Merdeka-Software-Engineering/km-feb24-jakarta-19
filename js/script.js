@@ -371,13 +371,38 @@ let lineChart = createChartLine(
     }
 );
 
-// Filter event listener
+// Set the default value of the store location filter to 'All Store'
+document.querySelector('#store').value = 'All Store';
+
+// Filter by store location
 document.querySelector('#store').addEventListener('change', event => {
     const value = event.target.value
-
     let rows = datasets
-    if (value != 'All Option') {
+
+    if (value!= 'All Store') {
         rows = datasets.filter(row => row.store_location === value)
+    }
+
+    // Save the current date filter values
+    const startDate = document.querySelector('#dateStart').value;
+    const endDate = document.querySelector('#dateEnd').value;
+
+    // Apply the date filter if necessary
+    if (startDate && endDate) {
+        rows = rows.filter(row => {
+            const transactionDate = new Date(row.transaction_date);
+            return transactionDate >= new Date(startDate) && transactionDate <= new Date(endDate);
+        });
+    } else if (startDate) {
+        rows = rows.filter(row => {
+            const transactionDate = new Date(row.transaction_date);
+            return transactionDate >= new Date(startDate);
+        });
+    } else if (endDate) {
+        rows = rows.filter(row => {
+            const transactionDate = new Date(row.transaction_date);
+            return transactionDate <= new Date(endDate);
+        });
     }
 
     table.clear()
@@ -385,16 +410,21 @@ document.querySelector('#store').addEventListener('change', event => {
     table.draw()
 
     updateMetricsAndCharts(rows, value)
-})
-
-//... (rest of the code remains the same)
+});
 
 // Filter by date
 document.querySelectorAll('#dateStart, #dateEnd').forEach(input => {
     input.addEventListener('change', () => {
         const startDate = new Date(document.querySelector('#dateStart').value);
         const endDate = new Date(document.querySelector('#dateEnd').value);
-        const filteredRows = datasets.filter(row => {
+        let filteredRows = datasets;
+
+        // Apply the store location filter if necessary
+        if (document.querySelector('#store').value!== 'All Store') {
+            filteredRows = filteredRows.filter(row => row.store_location === document.querySelector('#store').value);
+        }
+
+        filteredRows = filteredRows.filter(row => {
             const transactionDate = new Date(row.transaction_date);
             if (document.querySelector('#dateStart').value && document.querySelector('#dateEnd').value) {
                 return transactionDate >= startDate && transactionDate <= endDate;
@@ -403,14 +433,10 @@ document.querySelectorAll('#dateStart, #dateEnd').forEach(input => {
             } else if (document.querySelector('#dateEnd').value) {
                 return transactionDate <= endDate
             }
-
-
-            console.log(startDate, endDate);
-            // return transactionDate >= startDate && transactionDate <= endDate;
             return true
         });
 
-        updateMetricsAndCharts(filteredRows, 'All Option');
+        updateMetricsAndCharts(filteredRows, 'All Store');
     });
 });
 
