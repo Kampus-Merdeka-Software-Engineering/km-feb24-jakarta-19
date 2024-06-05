@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 19 Dashboard</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/about.css">
+
+    <!-- icons css  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- table  -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+
+</head>
+<!--  === ini yang di repo ===  -->
+
+<body>
+    <!-- ====== header ====== -->
+    <div class="all-section">
+        <!-- ====== Sidebar navigation ====== -->
+        <aside>
+            <nav class="sidebar">
+                <div class="image-text">
+                    <span class="logo">
+                        <img src="asset/logo revou_1.png" alt="logo">
+                    </span>
+                    <div class="text-logo">
+                        <span class="team">TEAM 19</span>
+                        <span class="kota">Jakarta</span>
+                    </div>
+                </div>
+                <!-- ====== Menu  navigation ====== -->
+                <div class="menu-bar">
+                    <div class="menu">
+                        <ul><!-- class="menu-links" -->
+                            <li>
+                                <a href="index.html">
+                                    <i class='bx bxs-dashboard icons'></i>
+                                    <span class="text nav-text">Dashboard</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul> <!-- class="menu-links" -->
+                            <li>
+                                <a href="about.html" class="active">
+                                    <i class='bx bx-error-circle icons'></i>
+                                    <span class="text nav-text">About Us</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="bottom-content">
+                                <a href="#">
+                                    <i class='bx bx-log-out icons'></i>
+                                    <span class="text nav-text">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        <!-- ======= main section ======== -->
+        <div class="main-section">
+            <header class="head-content">
+                <nav>
+                    <div id="menu-button">
+                        <input type="checkbox" id="menu-checkbox">
+                        <label for="menu-checkbox" id="menu-label">
+                            <div id="humburger"><i class='bx bx-menu'></i></div>
+                        </label>
+                    </div>
+                    <!-- <i class='bx bx-menu'></i> -->
+                    <a href="#" class="link-nav">DASHBOARD</a>
+                    <form action="#">
+                        <div class="form-input">
+                            <button type="submit" class="search-btn"><i class='bx bx-search-alt'></i></button>
+                            <input type="search" placeholder="Type to Search">
+                        </div>
+                    </form>
+                    <a href="#" class="notification">
+                        <i class='bx bxs-bell'></i>
+                    </a>
+                    <a href="#">
+                        <img src="asset/user photos.jpg" alt="user picture">
+                    </a>
+                </nav>
+            </header>
+            <!-- ========= Main container ======== -->
+            <div class="main-container">
+                <section id="team-card">
+                    <div class="heading">
+                        <i class="fas fa-rocket"></i>
+                        <div class="team-descrption">
+                            TEAM
+                        </div>
+                    </div>
+                    <div class="container-card">
+                        <div class="box">
+                            <div class="top-bar"></div>
+                                <div class="nav">
+                                    <i class="verify fas fa-check-circle"></i>
+                                    <input type="checkbox" class="heart-btn" id="heart-btn">
+                                    <label  class="heart"></label>
+                                </div>
+              
+                                <div class="details">
+                                    <img src="asset/user photos.jpg" alt="">
+                                    <strong>Emma Olivia</strong>
+                                    <div class="description">
+                                        <label for="">fatimahah email</label>
+                                        <label for="">software eninering </label>
+                                    </div>
+
+                                </div>
+              
+                                <div class="btn">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class='bx bxl-github'></i></a>
+                                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        <div class="box">
+                            <div class="top-bar"></div>
+                                <div class="nav">
+                                    <i class="verify fas fa-check-circle"></i>
+                                    <input type="checkbox" class="heart-btn" id="heart-btn">
+                                    <i class='bx bxs-heart-circle'></i>
+                                    <label  class="heart"></label>
+                                </div>
+              
+                                <div class="details">
+                                    <img src="asset/user photos.jpg" alt="">
+                                    <strong>Sofia Adward</strong>
+                                    <p>Sofiaadward@gmail.com</p>
+                                </div>
+              
+                                <div class="btn">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        <div class="box">
+                            <div class="top-bar"></div>
+                                <div class="nav">
+                                    <i class="verify fas fa-check-circle"></i>
+                                    <input type="checkbox" class="heart-btn" id="heart-btn">
+                                    <label  class="heart"></label>
+                                </div>
+              
+                                <div class="details">
+                                    <img src="asset/user photos.jpg" alt="">
+                                    <strong>Touseeq Ijaz</strong>
+                                    <p>Touseeqijaz@gmail.com</p>
+                                </div>
+              
+                                <div class="btn">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                </div>
+                              </div>
+                        <div class="box">
+                            <div class="top-bar"></div>
+                                <div class="nav">
+                                    <i class="verify fas fa-check-circle"></i>
+                                    <input type="checkbox" class="heart-btn" id="heart-btn">
+                                    <label  class="heart"></label>
+                                </div>
+              
+                                <div class="details">
+                                    <img src="asset/user photos.jpg" alt="">
+                                    <strong>Amelia Alex</strong>
+                                    <p>Ameliaalex@gmail.com</p>
+                                </div>
+              
+                                <div class="btn">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </section>
+                <!-- ==== filter ==== -->
+                
+                <!-- ======== CHART ===== -->
+                
+                    <!-- ======== table  =========== -->
+            </div>
+            <!-- ============== footer =================== -->
+            <div class="fotter-section">
+                <footer class="footer">
+                    <p>&copy 2024 Team 19 Jakarta</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"
+        integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3ZSTk7kajkaj4D292NLuduDCO1c/NT8Id+jE58KYLKT7hXnbtryGmMg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- data table -->
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+
+    <!-- custom Javascript -->
+    <script src="js/script.js" type="module"> </script>
+
+    <!-- icon  -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+</body>
+
+</html>

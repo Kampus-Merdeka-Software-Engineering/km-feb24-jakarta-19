@@ -23,6 +23,12 @@
   --tran-03: all 0.3 ease;
   --tran-03: all 0.4 ease;
   --tran-05: all 0.4 ease;
+
+  --green-pekat: #003C25;
+  --green-light: #BFE1D5;
+  --green-blue: #0E7174;
+  --brown-pekat: #906741;
+  --brwon-light: #B49567;
 }
 
 body {
@@ -43,7 +49,7 @@ aside {
   /* width: auto; */
   padding: 10px;
   display: flex;
-  background-color: var(--sidebar-color);
+  background-color: var(--green-pekat);
 }
 
 .sidebar{
@@ -90,8 +96,6 @@ aside {
 }
 
 .text-logo .kota {
-  /* margin: 5px; */
-  /* display: flex; */
   font-size: 14px;
   font-weight: 500;
 }
@@ -121,11 +125,13 @@ aside {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-color);
+  color: var(--green-light);
 }
 
 .sidebar  .text {
-  color: var(--text-color); 
+  color: var(--brwon-light);
+  font-weight: 600;
+
 }
 
 /*  == mengilangkan text di sidebar == */
@@ -141,7 +147,7 @@ aside {
   list-style: none;
   justify-content: center;
   padding: 5px;
-  /* transition: all ease-in-out .4s; */
+
 
 }
 
@@ -152,32 +158,30 @@ aside {
   transition: all ease-in .4s;
   border-radius: 10px;
   padding: 10px 20px 10px 10px;
-  /* transition: all ease-in .4s; */
-
+  
 }
 
 /* active */
 .sidebar li a.active{
-  background: var(--secondary-color);
-  color: var(--icon-color);
+  background: var(--green-light);
 }
 
 /* hover */
 .sidebar li a:hover {
-  background: var(--secondary-color);
-  color: var(--icon-color);
+  background: var(--green-light);
 }
 
 /* active text color */
 .sidebar li a.active .icons,
 .sidebar li a.active .text {
-  color: var(--icon-color);
+  color: var(--green-pekat);
 }
 
 /* hover text color */
 .sidebar li a:hover .icons,
 .sidebar li a:hover .text {
-  color: var(--icon-color);
+  color: var(--green-pekat);
+
 }
 
 
@@ -231,7 +235,7 @@ aside {
 .head-content nav .link-nav {
   font-size: 20px;
   font-weight: bold;
-  color: var(--sidebar-color);
+  color: var(--green-blue);
   transition: .3s ease;
   text-decoration: none;
 }
@@ -283,7 +287,7 @@ aside {
   border: none;
   outline: #E4E4E7;
   padding: 9px;
-  color: var(--sidebar-color);
+  color: var(--green-blue);
   cursor: pointer;
 }
 
@@ -340,7 +344,7 @@ aside {
   font-weight: 700;
   padding-top: 10px;
   padding-left: 10px;
-  color: var(--icon-color);
+  color: var(--brown-pekat);
 }
 
 .text-chart #text2 {
@@ -362,6 +366,7 @@ aside {
 #store{
   padding: 10px 10px;
   background-color: #ffffff;
+  color: var(--green-blue);
   cursor: pointer;
   border-radius: 8px;
   font-size: 14px;
@@ -374,30 +379,38 @@ aside {
 #store:focus,
 #store:hover{
   outline: none;
+  background-color: var(--green-light);
+  color: var(--green-pekat);
 }
 
 #store option{
   background: #ffffff;
+  color: var(--green-pekat);
+  font-weight: 500;
 }
+
 
 .filter-2{
   display: flex;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
-  border: #060606;
+  /* border: #060606; */
 
 }
 
 .filter-2 label {
   margin-left: 6px;
-  padding: 0;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
   font-weight: 500;
+  color: var(--green-blue);
+  /* background-color: var(--green-pekat); */
 }
+
 
 .filter-2 input[type="date"] {
   border: none;
@@ -408,11 +421,17 @@ aside {
   padding-left: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  cursor: pointer;
+  color: var(--green-blue);
+
 }
 
 .filter-2 input[type="date"]:focus,
 .filter-2 input[type="date"]:hover{
   outline: none;
+  background-color: var(--green-light);
+  color: var(--green-pekat);
+
 }
 
 ::-webkit-calendar-picker-indicator{
@@ -462,8 +481,8 @@ aside {
   width: 70px;
   height: 70px;
   border-radius: 12px;
-  background: #e1e0e0;
-  color: #8a8ac9;
+  background: var(--green-light);
+  color: var(--green-pekat);
   font-size: 36px;
   display: flex;
   justify-content: center;
@@ -486,8 +505,8 @@ aside {
   width: 70px;
   height: 70px;
   border-radius: 10px;
-  background: #e1e0e0;
-  color: #8a8ac9;
+  background: var(--green-light);
+  color: var(--green-pekat);
   font-size: 32px;
   display: flex;
   justify-content: center;
@@ -510,8 +529,9 @@ aside {
   width: 70px;
   height: 70px;
   border-radius: 10px;
-  background: #e1e0e0;
-  color: #8a8ac9;
+  /* padding: 20px; */
+  background: var(--green-light);
+  color: var(--green-pekat);
   font-size: 32px;
   display: flex;
   justify-content: center;
@@ -568,7 +588,7 @@ aside {
   padding-right: 10px;
   padding-left: 10px;
   text-align: left;
-  background: #dcdbdb;
+  background: var(--green-light);
   font-size: 14px;
   position: sticky; 
   top: 0;
@@ -581,6 +601,8 @@ aside {
   padding-left: 10px;
   text-align: left;
   font-size: 14px;
+  font-weight: 400;
+  color: var(--green-pekat);
   border-top: 1px solid #ddd; /* Menambahkan border atas pada setiap baris */
 }
 
@@ -593,28 +615,35 @@ aside {
   text-align: center;
   padding-bottom: 5px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--green-pekat);
 }
 
 .rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4, 
 .rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 
 .card-name{
   padding: 10px;
+  
 }
 
 .rectangle-2, .rectangle-3, .rectangle-4, .card-name .numbers{
   font-size: 20px;
   font-weight: 700;
+  
 }
 
 .rectangle-2, .rectangle-3, .rectangle-4, .card-name label{
   font-size: 16px;
   font-weight: 400;
+  color: var(--green-pekat);
 }
 
 .rectangle-5, .rectangle-6, .rectangle-7, .rectangle-8 .card-name{
   text-align: center;
   padding: 10px;
+  color: var(--green-pekat);
+  font-weight: 500;
+  
 }
 
 
@@ -628,6 +657,7 @@ canvas {
   height: 100%;
   flex-wrap: wrap;
   padding: 10px;
+
 
 }
 
@@ -656,6 +686,7 @@ canvas {
   border-radius: 10px;
   overflow: auto;
   width: 100%;
+  color: var(--green-pekat);
 }
 
 .table-container table {
@@ -663,8 +694,9 @@ canvas {
 }
 
 .table-container table thead {
-  background-color: rgba(128, 128, 128, 0.751);
-  color: white;
+  /* background-color: rgba(128, 128, 128, 0.751); */
+  background-color: var(--green-pekat);
+  color: #ffff;
 }
 
 .table-container tr {
@@ -692,19 +724,22 @@ canvas {
 }
 
 .table-container table tbody tr:nth-child(even) {
-  background: #f9f9f9;
+  background: #D8E9E4;
+  /* background: #E3EDEA; */
+  /* background: #fff8ed; */
 }
 
 .table-container table tbody tr:hover {
-  background: #dddddd;
+  /* background: #dddddd; */
+  background: var(--green-light);
 }
 
 
 /* =======================  FOOTER ======================*/
 
 footer {
-  background-color: var(--secondary-color);
-  color: var(--sidebar-color);
+  background-color: var(--green-light);
+  color: var(--green-pekat);
   padding: 10px;
   margin-top: 20px;
   width: 100%;

@@ -120,9 +120,9 @@ table
     .draw();
 
 document.querySelector('#bodyPerformance').innerHTML = htmlTopPerformance
-document.querySelector('#sold').innerHTML = productSold
+document.querySelector('#sold').innerHTML = productSold 
 document.querySelector('#trans').innerHTML = datasets.length
-document.querySelector('#rev').innerHTML = revenue.toFixed(2)
+document.querySelector('#rev').innerHTML = "$" + revenue.toFixed(2)
 
 function persen(items, totalRevenue) {
     let hasil = []
@@ -146,24 +146,29 @@ function createChart(element, type, label, datasets, options) {
         },
         options: options
     });
-    return chart;
+    return chart ;
 }
 
 // =================== PIE CHART ================
 
 let pieChart = createChart(
     'pie-chart',
-    'doughnut',
+    'pie',
     revenueByStore.map(row => row.name),
     [
         {
-            label: 'trafic source',
+            label: 'Data',
             data: persen(revenueByStore, revenue),
-            backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
-            ],
+            backgroundColor: 
+            [
+                'rgba(0, 60, 37, 0.8)',
+                'rgba(144, 103, 63, 0.9)',
+                'rgba(191, 225, 213, 0.9)'
+            ]
+            ,
+
+            
+       
         }],
 
     {}
@@ -177,9 +182,10 @@ function getMonthIndex(dateString) {
 }
 
 const salesByLocationAndMonth = {
-    "Astoria": Array(12).fill(0),
+    "Lower Manhattan": Array(12).fill(0),
     "Hell's Kitchen": Array(12).fill(0),
-    "Lower Manhattan": Array(12).fill(0)
+    "Astoria": Array(12).fill(0)
+    
 };
 
 datasets.forEach(dataset => {
@@ -197,29 +203,24 @@ const datasetsForChart = locations.map(location => {
 
     // Assign color based on location
     if (location === "Astoria") {
-        backgroundColor = 'rgba(255, 0, 0, 0.2)'; // Red
+        backgroundColor = 'rgba(191, 225, 213, 0.9)'; // 
     } else if (location === "Hell's Kitchen") {
-        backgroundColor = 'rgba(255, 255, 0, 0.2)'; // Yellow
+        backgroundColor = 'rgba(144, 103, 63, 0.9)'; // 
     } else if (location === "Lower Manhattan") {
-        backgroundColor = 'rgba(0, 128, 0, 0.7)'; // Green
+        backgroundColor = 'rgba(0, 60, 37, 0.8)'; // 
     }
     return {
         label: location,
         data: salesByLocationAndMonth[location],
         backgroundColor: backgroundColor,
         borderColor: backgroundColor.replace('0.2', '1'), // Change the border color to match the bar color
-        // borderWidth: 1
-        // label: location,
-        // data: salesByLocationAndMonth[location],
-        // backgroundColor:
-        // ['rgba(75, 192, 192, 0.2)',
-        // 'rgb(54, 162, 235)',
-        // 'rgb(255, 205, 86)']
     };
 });
 
 function createChartBar(element, type, labels, datasets, options) {
     const ctx = document.getElementById(element).getContext('2d');
+
+    
     return new Chart(ctx, {
         type: type,
         data: {
@@ -271,19 +272,22 @@ const sortedCategories = Object.entries(productCategorySales)
 const labels = sortedCategories.map(entry => entry[0]);
 const data = sortedCategories.map(entry => entry[1]);
 
+
+
 const datasetForChart = {
     labels: labels,
     datasets: [{
         label: 'Quantity Sold',
         data: data,
-        backgroundColor: 'rgba(99, 171, 250, 0.6)',
-        borderColor: 'rgba(2, 91, 170, 1)',
+        backgroundColor: 'rgba(0, 60, 37, 0.8)',
+        borderColor: 'rgba(191, 225, 213, 0.5)',
         borderWidth: 1
     }]
 };
 
 function createChartHorBar(element, type, labels, datasets, options) {
     const ctx = document.getElementById(element).getContext('2d');
+    
     return new Chart(ctx, {
         type: type,
         data: {
@@ -335,8 +339,9 @@ const datasetForChartLine = {
         label: 'Products Sold',
         data: dataLine,
         fill: false,
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(144, 103, 63, 0.9)',
+        backgroundColor: 'rgba(191, 225, 213, 0.9)',
+        borderWidth :2,
         tension: 0.1
     }]
 };
@@ -370,6 +375,8 @@ let lineChart = createChartLine(
         }
     }
 );
+
+// ============================ FILTER =================================
 
 // Set the default value of the store location filter to 'All Store'
 document.querySelector('#store').value = 'All Store';
@@ -412,7 +419,7 @@ document.querySelector('#store').addEventListener('change', event => {
     updateMetricsAndCharts(rows, value)
 });
 
-// Filter by date
+// ======================= Filter berdasarkan date ================================ 
 document.querySelectorAll('#dateStart, #dateEnd').forEach(input => {
     input.addEventListener('change', () => {
         const startDate = new Date(document.querySelector('#dateStart').value);
@@ -501,18 +508,18 @@ function updateMetricsAndCharts(rows, value) {
 
 function updatePieChart(revenueByStore, revenue, value) {
     let backgroundColor = []
-
+    
     if (value === 'Astoria') {
-        backgroundColor.push('rgb(255, 99, 132)')
+        backgroundColor.push('rgba(191, 225, 213, 0.9)')
     } else if (value === 'Lower Manhattan') {
-        backgroundColor.push('rgb(54, 162, 235)')
+        backgroundColor.push('rgba(0, 60, 37, 0.8)')
     } else if (value === "Hell's Kitchen") {
-        backgroundColor.push('rgb(255, 205, 86)')
+        backgroundColor.push('rgba(144, 103, 63, 0.9)')
     } else {
         backgroundColor = [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)']
+            'rgba(191, 225, 213, 0.9)',
+            'rgba(0, 60, 37, 0.8)',
+            'rgba(144, 103, 63, 0.9)']
     }
 
     pieChart.data.labels = revenueByStore.map(item => item.name)
@@ -546,11 +553,11 @@ function updateBarChart(rows) {
 
         // Assign color based on location
         if (location === "Astoria") {
-            backgroundColor = 'rgba(255, 0, 0, 0.2)'; // Red
+            backgroundColor = 'rgba(191, 225, 213, 0.9)'; // Red
         } else if (location === "Hell's Kitchen") {
-            backgroundColor = 'rgba(255, 255, 0, 0.2)'; // Yellow
+            backgroundColor = 'rgba(144, 103, 63, 0.9)'; // Yellow
         } else if (location === "Lower Manhattan") {
-            backgroundColor = 'rgba(0, 128, 0, 0.7)'; // Green
+            backgroundColor = 'rgba(0, 60, 37, 0.8)'; // Green
         }
         return {
             label: location,
