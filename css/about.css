@@ -251,8 +251,6 @@ aside {
   display: none;
 }
 
-
-
 .head-content nav .link-nav {
   font-size: 20px;
   font-weight: bold;
@@ -332,7 +330,6 @@ aside {
 
 .main-container {
   width: 100%;
-  /* padding-top: 20px; */
   cursor: pointer;
   padding: 10px;
 }
@@ -353,45 +350,19 @@ a{
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    /* border: 2px solid #7d5dd5; */
 }
 
 .heading {
-    /* border: 2px solid #003C25; */
     display: block;
     padding-top: 20px;
-    /* margin: 20px; */
     
 }
 
-.team-descrption .name-team{
-  font-size: 18px;
+.name-team label{
+  font-size: 20px;
   font-weight: 700;
   color: var(--green-pekat);
 }
-/* .heading {
-    font-size: 1.3rem;
-    color: #2c2c2c;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    border: 2px solid #f04c33;
-} */
-
-/* .heading i{
-    background-color: #333;
-    color: var(--green-pekat);
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.9rem;
-    margin: 0 20px;
-    border: 2px solid #1ada24;
-} */
-
 
 .container-card{
     display: flex;
@@ -414,7 +385,6 @@ a{
     border-radius: 10px;
     margin: 20px;
     position: relative;
-    /* border: 2px solid #beec35; */
     box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
 }
 
@@ -429,20 +399,15 @@ a{
     transform: translate(-50%);
     background-color: var(--green-pekat);
     border-radius: 0 0 10px 10px;
-    /* border: 2px solid #906741; */
 }
 
-/* .verify{
-     color: #333;
-} */
+
 
 .top-icons{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-
-    /* border: 2px solid #da1a40; */
 }
 
 .top-icons .left,
@@ -451,21 +416,12 @@ a{
    cursor: pointer;
 }
 
-/* .top-icons.right .bx .bxs-heart-circle:before {
-    content: '\f004';
-    line-height: 30px;
-    z-index: 1;
-    cursor: pointer;
-    background-color: #D0F4E9;
-} */
-
 
 .details {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* border: 2px solid #1acada; */
 }
 
 .details img {
