@@ -490,7 +490,7 @@ function updateMetricsAndCharts(rows, value) {
     document.querySelector('#bodyPerformance').innerHTML = htmlTopPerformance
     document.querySelector('#sold').innerHTML = productSold
     document.querySelector('#trans').innerHTML = rows.length
-    document.querySelector('#rev').innerHTML = revenue.toFixed(2)
+    document.querySelector('#rev').innerHTML = "$" + revenue.toFixed(2)
 
     updatePieChart(revenueByStore, revenue, value)
     updateBarChart(rows)
@@ -525,7 +525,7 @@ function updatePieChart(revenueByStore, revenue, value) {
     pieChart.data.labels = revenueByStore.map(item => item.name)
     pieChart.data.datasets = [
         {
-            label: 'trafic source',
+            label: 'Data',
             data: persen(revenueByStore, revenue),
             backgroundColor: backgroundColor
         }]
@@ -564,13 +564,6 @@ function updateBarChart(rows) {
             data: salesByLocationAndMonth[location],
             backgroundColor: backgroundColor,
             borderColor: backgroundColor.replace('0.2', '1'), // Change the border color to match the bar color
-            // borderWidth: 1
-            // label: location,
-            // data: salesByLocationAndMonth[location],
-            // backgroundColor:
-            // ['rgba(75, 192, 192, 0.2)',
-            // 'rgb(54, 162, 235)',
-            // 'rgb(255, 205, 86)']
         };
     });
 
