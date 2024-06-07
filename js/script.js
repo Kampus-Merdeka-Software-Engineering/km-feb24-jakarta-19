@@ -7,6 +7,10 @@ menuBtn.addEventListener('click', function () {
 
 
 });
+
+// function toggleSidebar() {
+//     document.querySelector('.sidebar').classList.toggle('hide');
+//   }
 // TOGGLE SIDEBAR
 
 import datasets from "./../asset/dataset coffee shop seles.json" assert { type: "json" }

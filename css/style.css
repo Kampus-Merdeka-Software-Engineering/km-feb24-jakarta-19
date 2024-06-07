@@ -203,7 +203,7 @@ aside {
   color: #dcdbdb;
   background-color: var(--primary-color-light);
   z-index: 100;
-  padding: 0 24px;
+  padding: 0 20px;
   box-shadow: 2px 1px 5px 1px;
 }
 
@@ -752,6 +752,316 @@ canvas {
   background: var(--green-light);
 }
 
+/* ===== Profile Card ========== */
+
+
+
+#team-card{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heading {
+  display: block;
+  padding-top: 20px;
+  
+}
+
+.name-team label{
+font-size: 28px;
+font-weight: 700;
+color: var(--green-pekat);
+}
+
+.container-card{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.box{
+  width: 250px;
+  height: 350px;
+  background-color: var(--green-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  position: relative;
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+}
+
+.top-bar{
+  width: 50%;
+  height: 6px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top:0;
+  transform: translate(-50%);
+  background-color: var(--green-pekat);
+  border-radius: 0 0 10px 10px;
+}
+
+.top-icons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.top-icons .left,
+.top-icons .right{
+ color: var(--green-pekat);
+ cursor: pointer;
+}
+
+
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.details img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.6);
+}
+
+.details .name{
+font-size: 15px;
+font-weight: 700;
+padding-bottom: 5px;
+text-align: center;
+text-transform: uppercase;
+color: var(--green-pekat);
+}
+
+.details .description{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.details .description .role{
+font-size: 12px;
+font-weight: 400;
+color: var(--green-pekat);
+}
+
+.details .description .study{
+font-size: 14px;
+font-weight: 600;
+padding-top: 2px;
+color: var(--brown-pekat);
+}
+.sosmed{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  line-height: 45px;
+  gap: 15px;
+}
+
+.sosmed a{
+  height: 45px;
+  width: 45px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 55px;
+  background-color: var(--green-pekat);
+  color: var(--green-more-light);
+}
+
+.sosmed a i {
+  justify-content: center;
+  font-size: 24px;
+  align-items: center;
+  text-align: center;
+}
+
+.sosmed a:hover {
+  color: #fff;
+  background-color: var(--brown-pekat);
+  transition: all ease 0.3s;
+}
+
+.box:hover{
+  transform: scale(1.01);
+  transition: all ease 0.1s;
+}
+
+.line-1{
+border: 2px solid;
+border-color: var(--brown-pekat);
+width:100%;
+margin-top:2px;
+margin-bottom:2px;
+}
+
+.line-2{
+border: 1.3px solid;
+border-color: var(--green-pekat);
+width:100%;
+margin-top:2px;
+margin-bottom:2px;
+}
+
+/* .card-desc{
+border: 2px solid #906741;
+} */
+/* 
+@media(max-width:612px){
+  .box{
+      flex-grow: 0.7;
+  }
+} */
+
+/* ========== TABLET VERSION ========  */
+
+@media (max-width: 768px) {
+  .all-section {
+    flex-direction: column;
+  }
+
+  aside {
+    position: relative;
+    display: flex;
+    position: fixed;
+  }
+
+  .sidebar {
+    width: 100%;
+    
+  }
+
+  .main-section {
+    width: 100%;
+  }
+
+  /* ======== KEKNYA UDAH OK ======  */
+  .head-content nav {
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .head-content nav form {
+    width: 50%;
+    /* flex-wrap: wrap; */
+  }
+  .head-content nav a .link-nav{
+    font-size: 12px;
+  }
+
+  .box{
+    flex-grow: 0.7;
+  }
+}
+
+
+ 
+
+/* =============== MOBILE VERSION ========= */
+
+@media (max-width: 480px) {
+  .all-section {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 70px;
+    /* height: auto; */
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    /* padding: 5px 0; */
+    left: 0;
+    background-color: var(--green-pekat);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar .menu li {
+    flex: 1;
+    text-align: center;
+
+  }
+
+  .sidebar .menu li a {
+    padding: 10px;
+    /* display: flex; */
+
+  }
+
+  .sidebar .image-text {
+    display: none;
+  }
+
+  .main-section {
+    width: 100%;
+    padding-bottom: 60px; /* Adjust according to the height of the bottom navigation bar */
+
+  }
+
+  /* ======== heading mobile ok ==========  */
+  .head-content nav {
+    /* flex-direction: column; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .head-content nav a .link-nav{
+    font-size: 12px;
+  }
+  .head-content nav form {
+    width: 48px;
+    flex-wrap: wrap;
+  }
+
+  .head-content nav form input{
+    width: 20px;
+  }
+  .main-container {
+    padding: 5px;
+  }
+
+  .box {
+    width: 70%;
+    height: auto;
+    margin: 10px 0;
+    flex-grow: 0.7;
+  }
+
+  footer{
+    display: none;
+  }
+}
+
 
 /* =======================  FOOTER ======================*/
 
@@ -769,6 +1079,3 @@ footer {
 }
 /* ==== END FOOTER ==== */
 
-@media screen {
-  
-}
