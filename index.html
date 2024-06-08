@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team 19 Dashboard</title>
+    
     <!-- logo -->
     <link rel="icon" href="images/favicon_1.ico" type="image/x-icon">
 
@@ -18,11 +19,9 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
 
 </head>
-<!--  === ini yang di repo ===  -->
-
 <body>
-    <!-- ====== header ====== -->
     <div class="all-section">
+
         <!-- ====== Sidebar navigation ====== -->
         <aside>
             <nav class="sidebar">
@@ -54,14 +53,6 @@
                                 </a>
                             </li>
                         </ul>
-                        <ul>
-                            <!-- <li class="bottom-content">
-                                <a href="#">
-                                    <i class='bx bx-log-out icons'></i>
-                                    <span class="text nav-text">Logout</span>
-                                </a>
-                            </li> -->
-                        </ul>
                     </div>
                 </div>
             </nav>
@@ -72,7 +63,7 @@
                 <li>
                     <a href="index.html" class="active">
                         <i class='bx bxs-dashboard icons'></i>
-                        <!-- <span class="text nav-text">Dashboard</span> -->
+                        <span class="text nav-text">Dashboard</span>
                     </a>
                 </li>
             </ul>
@@ -80,13 +71,11 @@
                 <li>
                     <a href="about.html">
                         <i class='bx bx-error-circle icons'></i>
-                        <!-- <span class="text nav-text">About Us</span> -->
+                        <span class="text nav-text">About Us</span>
                     </a>
                 </li>
             </ul>
         </div>
-
-        <!-- ===  ===  -->
         <!-- ======= main section ======== -->
         <div class="main-section">
             <header class="head-content">
@@ -96,29 +85,8 @@
                         <label for="menu-checkbox" id="menu-label">
                             <div id="humburger"><i class='bx bx-menu'></i></div>
                         </label>
-                        <!-- <a href="#" class="link-nav">DASHBOARD</a> -->
                     </div>
-                    <!-- <i class='bx bx-menu'></i> -->
                     <a href="#" class="link-nav">DASHBOARD</a>
-
-
-                    <!-- <img class="maven" src="asset/logo maven svg.svg" alt="logo"> -->
-                    <!-- <div class="maven">
-                        
-                    </div> -->
-                    <!-- <form action="#">
-                        <div class="form-input">
-                            <button type="submit" class="search-btn"><i class='bx bx-search-alt'></i></button>
-                            <input type="search" placeholder="Type to Search">
-                        </div>
-                    </form> -->
-                    <!-- <a href="#" class="notification">
-                        <i class='bx bxs-bell'></i>
-                    </a> -->
-                    <!-- <a href="#">
-                        <img src="asset/logo revou_1.png" alt="user picture">
-                        
-                    </a> -->
                 </nav>
             </header>
             <!-- ========= Main container ======== -->
@@ -130,7 +98,6 @@
                 <!-- ==== filter ==== -->
                 <div class="filter">
                     <div class="filter-1">
-                        <!-- <i class='bx bxs-map'></i> -->
                         <select name="" id="store">
                             <option disabled selected>Store</option>
                             <option value="All Store">All Store</option>
@@ -160,7 +127,6 @@
                                         </tr>
                                     </thead>
                                     <tbody id="bodyPerformance">
-
                                     </tbody>
                                 </table>
                             </div>
@@ -186,7 +152,6 @@
                             <label for="">Transactions</label>
                         </div>
                     </div>
-
                     <div class="rectangle-4">
                         <div class="ikon">
                             <i class='bx bxs-coin-stack'></i>
@@ -196,27 +161,22 @@
                             <label for="">Revenue</label>
                         </div>
                     </div>
-
                     <div class="rectangle-5">
                         <div class="card-name">Product Sold By Store Location</div>
                         <canvas id="bar-chart"></canvas>
                     </div>
-
                     <div class="rectangle-6">
                         <div class="card-name">Revenue By Store Location</div>
                         <canvas id="pie-chart"></canvas>
                     </div>
-
                     <div class="rectangle-7">
                         <div class="card-name">Top 5 Product Category Smallest Sold</div>
                         <canvas id="bar-chart-2"></canvas>
                     </div>
-
                     <div class="rectangle-8">
                         <div class="card-name">Quantity Sold By Time</div>
                         <canvas id="line-chart"></canvas>
                     </div>
-
                     <!-- ======== table  =========== -->
                     <div class="table-container">
                         <div class="text-table">Table Dataset Coffee Shop Sales</div>
