@@ -7,10 +7,6 @@ menuBtn.addEventListener('click', function () {
 
 
 });
-
-// function toggleSidebar() {
-//     document.querySelector('.sidebar').classList.toggle('hide');
-//   }
 // TOGGLE SIDEBAR
 
 import datasets from "./../asset/dataset coffee shop seles.json" assert { type: "json" }
@@ -65,7 +61,9 @@ let table = new DataTable('#all-table', {
         },
         {
             data: 'transaction_id',
-            name: 'transaction_id'
+            name: 'transaction_id',
+            orderable: true,
+            searchable: true
         },
         {
             data: 'transaction_date',
@@ -108,7 +106,8 @@ let table = new DataTable('#all-table', {
             name: 'product_detail'
         }
     ],
-    data: datasets
+    data: datasets,
+    order: [[1, 'asc']]
 });
 
 table
@@ -150,7 +149,7 @@ function createChart(element, type, label, datasets, options) {
         },
         options: options
     });
-    return chart ;
+    return chart;
 }
 
 // =================== PIE CHART ================
@@ -162,14 +161,14 @@ let pieChart = createChart(
     [
         {
             label: 'Data',
-            data: persen(revenueByStore, revenue),
+            data: persen(revenueByStore, revenueByStore.reduce((acc, curr) => acc + curr.revenue, 0)),
             backgroundColor: 
             [
                 'rgba(0, 60, 37, 0.8)',
                 'rgba(144, 103, 63, 0.9)',
                 'rgba(191, 225, 213, 0.9)'
             ]
-            ,
+           ,
 
             
        
@@ -189,7 +188,6 @@ const salesByLocationAndMonth = {
     "Lower Manhattan": Array(12).fill(0),
     "Hell's Kitchen": Array(12).fill(0),
     "Astoria": Array(12).fill(0)
-    
 };
 
 datasets.forEach(dataset => {
@@ -217,7 +215,7 @@ const datasetsForChart = locations.map(location => {
         label: location,
         data: salesByLocationAndMonth[location],
         backgroundColor: backgroundColor,
-        borderColor: backgroundColor.replace('0.2', '1'), // Change the border color to match the bar color
+        borderColor: backgroundColor.replace('0.2', '1'),
     };
 });
 
@@ -529,8 +527,8 @@ function updatePieChart(revenueByStore, revenue, value) {
     pieChart.data.labels = revenueByStore.map(item => item.name)
     pieChart.data.datasets = [
         {
-            label: 'Data',
-            data: persen(revenueByStore, revenue),
+            label: 'Revenue',
+            data: persen(revenueByStore, revenueByStore.reduce((acc, curr) => acc + curr.revenue, 0)),
             backgroundColor: backgroundColor
         }]
 
@@ -539,9 +537,9 @@ function updatePieChart(revenueByStore, revenue, value) {
 
 function updateBarChart(rows) {
     const salesByLocationAndMonth = {
-        "Astoria": Array(12).fill(0),
+        "Lower Manhattan": Array(12).fill(0),
         "Hell's Kitchen": Array(12).fill(0),
-        "Lower Manhattan": Array(12).fill(0)
+        "Astoria": Array(12).fill(0)
     };
 
     rows.forEach(dataset => {

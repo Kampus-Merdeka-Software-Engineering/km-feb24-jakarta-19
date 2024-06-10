@@ -842,7 +842,7 @@ canvas {
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas:
       "filter-1"
-      "fiter-2";
+      "filter-2";
   }
   .filter-2 {
     width: 70%;
@@ -875,6 +875,10 @@ canvas {
     display: none;
   }
 
+  .main-section {
+    width: 100%;
+  }
+
   .menu-bottom {
     display: flex;
     background-color: var(--green-pekat);
@@ -886,6 +890,7 @@ canvas {
     z-index: 2;
     justify-content: space-around;
     align-items: center;
+    width: 100vw;
   }
 
   .menu-bottom a {
@@ -932,7 +937,7 @@ canvas {
 
   }
   .filter-2 {
-    width: 90%;
+    width: 90vw;
   }
   .card-container {
     display: grid;
@@ -948,6 +953,10 @@ canvas {
       "area-8"
       "area-9"
     ;
+  }
+
+  [class^="rectangle-"] {
+    width: 90vw;
   }
 
   .rectangle-2,
