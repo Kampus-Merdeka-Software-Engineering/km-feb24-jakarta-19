@@ -383,7 +383,6 @@ aside {
   background: var(--white-color);
   border-radius: 10px;
   align-items: center;
-  justify-content: space-evenly;
   display: flex;
   grid-gap: 2px;
   box-shadow: 0px 5px 29px 0px rgba(0, 60, 37, 0.3);
@@ -406,7 +405,6 @@ aside {
   background: var(--white-color);
   border-radius: 10px;
   align-items: center;
-  justify-content: space-evenly;
   display: flex;
   grid-gap: 2px;
   box-shadow: 0px 5px 29px 0px rgba(0, 60, 37, 0.3);
@@ -428,7 +426,6 @@ aside {
   background: var(--white-color);
   border-radius: 10px;
   align-items: center;
-  justify-content: space-evenly;
   display: flex;
   grid-gap: 2px;
   box-shadow: 0px 5px 29px 0px rgba(0, 60, 37, 0.3);
@@ -529,10 +526,11 @@ aside {
 .rectangle-2,
 .rectangle-3,
 .rectangle-4,
-.card-name .numbers {
+.card-name .numbers, .card-container label{
   font-size: 20px;
   font-weight: 700;
   color: var(--brown-pekat);
+  padding-left: 20px;
 }
 .rectangle-2,
 .rectangle-3,
