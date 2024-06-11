@@ -123,7 +123,7 @@ table
     .draw();
 
 document.querySelector('#bodyPerformance').innerHTML = htmlTopPerformance
-document.querySelector('#sold').innerHTML = productSold 
+document.querySelector('#sold').innerHTML = productSold
 document.querySelector('#trans').innerHTML = datasets.length
 document.querySelector('#rev').innerHTML = "$" + revenue.toFixed(2)
 
@@ -162,13 +162,13 @@ let pieChart = createChart(
         {
             label: 'Data',
             data: persen(revenueByStore, revenueByStore.reduce((acc, curr) => acc + curr.revenue, 0)),
-            backgroundColor: 
-            [
-                'rgba(0, 60, 37, 0.8)',
-                'rgba(144, 103, 63, 0.9)',
-                'rgba(191, 225, 213, 0.9)'
-            ]
-           ,
+            backgroundColor:
+                [
+                    'rgba(0, 60, 37, 0.8)',
+                    'rgba(144, 103, 63, 0.9)',
+                    'rgba(191, 225, 213, 0.9)'
+                ]
+            ,
         }],
 
     {}
@@ -201,11 +201,11 @@ const datasetsForChart = locations.map(location => {
     let backgroundColor;
 
     if (location === "Astoria") {
-        backgroundColor = 'rgba(191, 225, 213, 0.9)'; // 
+        backgroundColor = 'rgba(191, 225, 213, 0.9)';
     } else if (location === "Hell's Kitchen") {
-        backgroundColor = 'rgba(144, 103, 63, 0.9)'; // 
+        backgroundColor = 'rgba(144, 103, 63, 0.9)';
     } else if (location === "Lower Manhattan") {
-        backgroundColor = 'rgba(0, 60, 37, 0.8)'; // 
+        backgroundColor = 'rgba(0, 60, 37, 0.8)';
     }
     return {
         label: location,
@@ -218,7 +218,7 @@ const datasetsForChart = locations.map(location => {
 function createChartBar(element, type, labels, datasets, options) {
     const ctx = document.getElementById(element).getContext('2d');
 
-    
+
     return new Chart(ctx, {
         type: type,
         data: {
@@ -285,7 +285,7 @@ const datasetForChart = {
 
 function createChartHorBar(element, type, labels, datasets, options) {
     const ctx = document.getElementById(element).getContext('2d');
-    
+
     return new Chart(ctx, {
         type: type,
         data: {
@@ -339,7 +339,7 @@ const datasetForChartLine = {
         fill: false,
         borderColor: 'rgba(144, 103, 63, 0.9)',
         backgroundColor: 'rgba(191, 225, 213, 0.9)',
-        borderWidth :2,
+        borderWidth: 2,
         tension: 0.1
     }]
 };
@@ -382,7 +382,7 @@ document.querySelector('#store').addEventListener('change', event => {
     const value = event.target.value
     let rows = datasets
 
-    if (value!= 'All Store') {
+    if (value != 'All Store') {
         rows = datasets.filter(row => row.store_location === value)
     }
 
@@ -420,7 +420,7 @@ document.querySelectorAll('#dateStart, #dateEnd').forEach(input => {
         const endDate = new Date(document.querySelector('#dateEnd').value);
         let filteredRows = datasets;
 
-        if (document.querySelector('#store').value!== 'All Store') {
+        if (document.querySelector('#store').value !== 'All Store') {
             filteredRows = filteredRows.filter(row => row.store_location === document.querySelector('#store').value);
         }
 
@@ -500,7 +500,7 @@ function updateMetricsAndCharts(rows, value) {
 
 function updatePieChart(revenueByStore, revenue, value) {
     let backgroundColor = []
-    
+
     if (value === 'Astoria') {
         backgroundColor.push('rgba(191, 225, 213, 0.9)')
     } else if (value === 'Lower Manhattan') {
