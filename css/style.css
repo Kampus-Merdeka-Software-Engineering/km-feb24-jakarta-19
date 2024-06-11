@@ -873,6 +873,10 @@ canvas {
     display: none;
   }
 
+  #menu-button {
+    display: none;
+  }
+
   .main-section {
     width: 100%;
   }
