@@ -169,9 +169,6 @@ let pieChart = createChart(
                 'rgba(191, 225, 213, 0.9)'
             ]
            ,
-
-            
-       
         }],
 
     {}
@@ -203,7 +200,6 @@ const months = ["January", "February", "March", "April", "May", "June"];
 const datasetsForChart = locations.map(location => {
     let backgroundColor;
 
-    // Assign color based on location
     if (location === "Astoria") {
         backgroundColor = 'rgba(191, 225, 213, 0.9)'; // 
     } else if (location === "Hell's Kitchen") {
@@ -380,10 +376,8 @@ let lineChart = createChartLine(
 
 // ============================ FILTER =================================
 
-// Set the default value of the store location filter to 'All Store'
 document.querySelector('#store').value = 'All Store';
 
-// Filter by store location
 document.querySelector('#store').addEventListener('change', event => {
     const value = event.target.value
     let rows = datasets
@@ -392,11 +386,9 @@ document.querySelector('#store').addEventListener('change', event => {
         rows = datasets.filter(row => row.store_location === value)
     }
 
-    // Save the current date filter values
     const startDate = document.querySelector('#dateStart').value;
     const endDate = document.querySelector('#dateEnd').value;
 
-    // Apply the date filter if necessary
     if (startDate && endDate) {
         rows = rows.filter(row => {
             const transactionDate = new Date(row.transaction_date);
@@ -428,7 +420,6 @@ document.querySelectorAll('#dateStart, #dateEnd').forEach(input => {
         const endDate = new Date(document.querySelector('#dateEnd').value);
         let filteredRows = datasets;
 
-        // Apply the store location filter if necessary
         if (document.querySelector('#store').value!== 'All Store') {
             filteredRows = filteredRows.filter(row => row.store_location === document.querySelector('#store').value);
         }
@@ -499,7 +490,6 @@ function updateMetricsAndCharts(rows, value) {
     updateHorBarChart(rows)
     updateLineChart(rows)
 
-    // Update the table
     if (Array.isArray(rows)) {
         table.clear();
         table.rows.add(rows);
@@ -553,19 +543,18 @@ function updateBarChart(rows) {
     const datasetsForChart = locations.map(location => {
         let backgroundColor;
 
-        // Assign color based on location
         if (location === "Astoria") {
-            backgroundColor = 'rgba(191, 225, 213, 0.9)'; // Red
+            backgroundColor = 'rgba(191, 225, 213, 0.9)';
         } else if (location === "Hell's Kitchen") {
-            backgroundColor = 'rgba(144, 103, 63, 0.9)'; // Yellow
+            backgroundColor = 'rgba(144, 103, 63, 0.9)';
         } else if (location === "Lower Manhattan") {
-            backgroundColor = 'rgba(0, 60, 37, 0.8)'; // Green
+            backgroundColor = 'rgba(0, 60, 37, 0.8)';
         }
         return {
             label: location,
             data: salesByLocationAndMonth[location],
             backgroundColor: backgroundColor,
-            borderColor: backgroundColor.replace('0.2', '1'), // Change the border color to match the bar color
+            borderColor: backgroundColor.replace('0.2', '1'),
         };
     });
 
