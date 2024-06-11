@@ -186,6 +186,10 @@ aside {
 
 /* ============= header content =============== */
 
+.image-text.mobile {
+  display: none;
+}
+
 .head-content {
   position: sticky;
   top: 0;
@@ -595,6 +599,7 @@ canvas {
   overflow: auto;
   width: 100%;
   color: var(--green-pekat);
+  background-color: var(--white-color);
   box-shadow: 0px 5px 29px 0px rgba(0, 60, 37, 0.3);
 }
 .table-container .text-table {
@@ -634,7 +639,9 @@ canvas {
 }
 
 .dt-length label {
-  margin-left: 10px;
+  margin-left: 0px;
+  padding-left: 5px;
+  font-size: 14px;
 }
 
 .table-container table tbody tr:nth-child(even) {
@@ -643,6 +650,10 @@ canvas {
 
 .table-container table tbody tr:hover {
   background: var(--green-light);
+}
+
+.dt-search label {
+  font-size: 14px;
 }
 
 /* ===== Profile Card ========== */
@@ -879,6 +890,23 @@ canvas {
 
   .main-section {
     width: 100%;
+  }
+
+  .head-content {
+    padding: 0px;
+  }
+
+  .image-text.mobile {
+    display: flex;
+    color: #003C25;
+    height: 100%;
+    align-items: center;
+    transform: scale(0.8);
+  }
+
+  .image-text.mobile .text-logo {
+    display: flex;
+    flex-direction: column;
   }
 
   .menu-bottom {
