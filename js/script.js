@@ -9,7 +9,7 @@ menuBtn.addEventListener('click', function () {
 });
 // TOGGLE SIDEBAR
 
-import datasets from "./../asset/dataset coffee shop seles.json" assert { type: "json" }
+import datasets from "./../asset/dataset coffee shop seles.json" with { type: "json" }
 let topPerformance = []
 let htmlTopPerformance = ""
 let productSold = 0
